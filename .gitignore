@@ -1,0 +1,7 @@
+.cache/*
+*.elc
+*~
+*.DS_Store
+data/*
+snippets/*.yas*
+snippets/*/.yas*

@@ -1,0 +1,14 @@
+#+TITLE: Miscellanea layer for Spacemacs
+
+[[file:img/lambday.png]]
+
+*  Description
+This layer groups together the various miscellanea emacs configurations not associated with a particular package.
+
+* TODO miscellanea todo
+SCHEDULED: <2015-11-05 Thu>
+- [-] find a home for keybindings
+  - [ ] spacemacs--cur-theme
+  - [X] spc j spc = c-h k
+- [ ] fix default-frame wierdness
+- [ ] fix farmhouse theme loading
