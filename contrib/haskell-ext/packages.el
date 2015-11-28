@@ -66,7 +66,6 @@
         "mlv"     'flycheck-verify-setup
         "mlh"     'helm-flycheck
         "mlt"     'flycheck-mode
-        "mli"     'haskell-ext-flycheck-insert-lints
         "mls"     'flycheck-select-checker
         "mil"   'haskell-process-load-file
         "mik"   'haskell-interactive-kill
@@ -79,7 +78,6 @@
         "mmn"     'haskell-navigate-imports
         "mms"     'haskell-sort-imports
         "mrd"     'hindent/reformat-decl
-        "mrt"     'haskell-ext-flycheck-insert-type-binding
         "mv"     'mmm-parse-buffer)
       (if haskell-ext-enable-hrefactor-support
        (evil-leader/set-key-for-mode 'haskell-mode

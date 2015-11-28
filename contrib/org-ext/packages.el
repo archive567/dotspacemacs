@@ -13,16 +13,7 @@
 (setq org-ext-packages
       '(
         org
-        (org-colview :location built-in)
-        (org-checklist :location local)
-        ;; page-break-lines
         ))
-
-(defun org/init-org-checklist ()
-  (use-package org-checklist))
-
-(defun org/init-org-colview ()
-  (use-package org-colview))
 
 (defun org/pre-init-org ()
   (spacemacs|use-package-add-hook org
@@ -30,16 +21,6 @@
     (progn
       (add-to-list 'auto-mode-alist '("\\.org_archive\\'" . org-mode))
       (evil-leader/set-key-for-mode 'org-mode
-        "mr" 'org-ext-random-entry
-        "mjj" 'org-ext-jump
-        "mjb" 'org-ext-jump-back
-        "mja" 'org-ext-jump-agenda)
+        "mr" 'org-ext-random-entry)
       (setq org-link-types '("http" "https" "ftp" "mailto" "file" "news"
-                             "elisp" "doi" "message")
-            )
-      )
-    :post-config
-    (progn
-      ;;(org-ext/insert-startupify-org-list))
-
-    )))
+                             "elisp" "doi" "message")))))

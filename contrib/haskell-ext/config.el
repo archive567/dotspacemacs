@@ -12,5 +12,5 @@
 ;; Variables
 
 
-(defvar haskell-ext-enable-hrefactor-support t
+(defvar haskell-ext-enable-hrefactor-support nil
   "If non-nil hrefactor support is enabled")

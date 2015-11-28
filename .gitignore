@@ -1,4 +1,5 @@
 .cache/*
+elpa/*
 *.elc
 *~
 *.DS_Store
