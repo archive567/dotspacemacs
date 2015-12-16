@@ -1,0 +1,17 @@
+* my personal spacemacs dot files
+* notes on setting up spacemacs
+
+fork spacemacs
+git clone fork
+git checkout develop
+
+mkdir dotspacemacs
+
+copy .spacemacs to dotspacemacs/init.el
+copy spacemacs elpa to dotspacemacs/elpa
+copy .cache to dotspacemacs/.cache
+
+ln -s .cache
+ln -s elpa
+ln -s dotspacemacs ~/.spacemacs.d
+ln -s spacemacs ~/.emacs.d

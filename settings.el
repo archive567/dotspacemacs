@@ -11,9 +11,10 @@
  '(dired-auto-revert-buffer t)
  '(erc-autojoin-mode t)
  '(erc-hide-list (quote ("JOIN" "KICK" "NICK" "PART" "QUIT")))
- '(erc-log-channels-directory "~/.spacemacs.d/data/erclog" t)
+ '(erc-log-channels-directory "~/.spacemacs.d/.cache/erclog" t)
  '(erc-log-mode t)
  '(erc-nick "tonyday567")
+ '(flycheck-display-errors-function (quote flycheck-display-error-messages))
  '(haskell-ext-yas-common-imports
    (quote
     ("API.IqFeed.Connect" "API.IqFeed.IqBar
@@ -87,7 +88,7 @@ as PP")))
 "<link rel=\\\"stylesheet\\\" href=\\\"http://scarcecapital.com/style/css/scarce.css\\\" type=\\\"text/css\\\" />")
 '(org-agenda-files
 (quote
- ("~/git/dotspacemacs/README.org" "~/git/dotspacemacs/contrib/org-ext/README.org" "~/git/dotspacemacs/contrib/haskell-ext/README.org" "~/stuff/perf.org" "~/stuff/juice.org" "~/stuff/tonyday567.github.io.org" "~/stuff/life.org" "~/stuff/search.org" "~/stuff/emacs/emacs.org" "~/stuff/haskell/haskell-notes.org" "~/stuff/refile.org" "~/stuff/stuff.org" "~/stuff/sys/bugz.org" "~/stuff/sys/webdev.org" "~/stuff/sys/sys.org")))
+ ("~/stuff/bugz.org" "~/git/dotspacemacs/README.org" "~/stuff/perf.org" "~/stuff/tonyday567.github.io.org" "~/stuff/life.org" "~/stuff/search.org" "~/stuff/refile.org" "~/stuff/stuff.org")))
  '(org-agenda-include-diary nil)
  '(org-agenda-ndays 1)
  '(org-agenda-persistent-filter t)
@@ -234,10 +235,10 @@ as PP")))
  '(org-support-shift-select t)
  '(paradox-execute-asynchronously t t)
  '(paradox-github-token "9c0337a9d7ffbfa53d06bf294278dc777a2b77c9")
- '(projectile-known-projects-file "~/.spacemacs.d/data/projectile-bookmarks.eld")
+ '(projectile-known-projects-file "~/.spacemacs.d/.cache/projectile-bookmarks.eld")
  '(reb-re-syntax (quote read))
- '(recentf-save-file "~/.spacemacs.d/data/recentf")
- '(tramp-persistency-file-name "~/.spacemacs.d/data/tramp" t)
+ '(recentf-save-file "~/.spacemacs.d/.cache/recentf")
+ '(tramp-persistency-file-name "~/.spacemacs.d/.cache/tramp" t)
  '(vc-annotate-background "#ecf0f1")
 '(vc-annotate-color-map
 (quote

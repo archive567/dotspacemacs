@@ -38,7 +38,6 @@
     (use-package hrefactor))
 
 (defun haskell-ext/pre-init-haskell-mode ()
-  (setq haskell-enable-ghc-mod-support nil)
   ;;(setq haskell-ext-enable-hrefactor-support nil)
   (spacemacs|use-package-add-hook haskell-mode
     :post-config

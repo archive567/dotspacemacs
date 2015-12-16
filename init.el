@@ -28,7 +28,12 @@ values."
      erc
      git
      github
-     haskell
+     (haskell
+      :variables
+      haskell-enable-shm-support nil
+      haskell-enable-hindent-style "gibianski"
+      haskell-enable-ghc-mod-support nil
+      haskell-enable-ghci-ng-support nil)
      haskell-ext
      markdown
      miscellanea
@@ -92,12 +97,12 @@ values."
    ;; List of items to show in the startup buffer. If nil it is disabled.
    ;; Possible values are: `recents' `bookmarks' `projects'.
    ;; (default '(recents projects bookmarks))
-   dotspacemacs-startup-lists '(recents projects bookmarks)
+   dotspacemacs-startup-lists '(recents projects bookmarks todos agenda)
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
-                         ;; farmhouse-light
+                         farmhouse-light
                          leuven
                          ;; farmhouse-light
                          spacemacs-dark
@@ -208,7 +213,7 @@ values."
    ;; Not used for now. (default nil)
    dotspacemacs-default-package-repository nil
    ;; whether to load the custom-file
-   dotspacemacs-load-custom-file nil
+   dotspacemacs-load-custom-file t
    ))
 
 (defun dotspacemacs/user-init ()
@@ -221,7 +226,7 @@ user code."
   "Configuration function for user code.
  This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
-  (setq custom-file "~/.emacs.d/settings.el")
+  (setq custom-file "~/.spacemacs.d/settings.el")
   (when dotspacemacs-load-custom-file
     (load custom-file))
 )
