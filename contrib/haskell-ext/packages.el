@@ -12,33 +12,16 @@
 
 (setq haskell-ext-packages
   '(
-    mmm-mode
     yasnippet
     haskell-mode
-    helm-flycheck
-    hrefactor
+    (hrefactor :location "~/.spacemacs.d/contrib/haskell-ext/local")
     ))
-
-(defun haskell-ext/pre-init-mmm-mode ()
-    (spacemacs|use-package-add-hook mmm-mode
-      :post-init
-      (progn
-        (mmm-add-classes
-         '((markdown-lhs
-            :submode markdown-mode
-            :front "^[^>]"
-            :include-front true
-            :back "\\(^>\\)\\|\\'")))
-        (mmm-add-mode-ext-class 'literate-haskell-mode "\\.lhs\\'" 'markdown-lhs))))
-
-(defun haskell-ext/init-helm-flycheck ()
-    (use-package helm-flycheck))
 
 (defun haskell-ext/init-hrefactor ()
     (use-package hrefactor))
 
 (defun haskell-ext/pre-init-haskell-mode ()
-  ;;(setq haskell-ext-enable-hrefactor-support nil)
+  (setq haskell-ext-enable-hrefactor-support t)
   (spacemacs|use-package-add-hook haskell-mode
     :post-config
     (progn
@@ -46,9 +29,23 @@
       (defun yas-hack ()
         (set (make-local-variable 'yas-fallback-behavior) 'call-other-command))
       (add-hook 'haskell-mode-hook 'yas-hack)
+      (add-hook 'haskell-interactive-mode-hook
+                (lambda ()
+                  (setq-local evil-move-cursor-back nil)))
+      (remove-hook 'haskell-mode-hook 'interactive-haskell-mode)
+      (defadvice haskell-interactive-switch (after spacemacs/haskell-interactive-switch-advice activate)
+        (when (eq dotspacemacs-editing-style 'hybrid)
+          (call-interactively 'evil-insert)))
+      (defun haskell-indentation-advice ()
+        (when (and (< 1 (line-number-at-pos))
+                   (save-excursion
+                     (forward-line -1)
+                     (string= "" (s-trim (buffer-substring (line-beginning-position) (line-end-position))))))
+          (delete-region (line-beginning-position) (point))))
 
+      (advice-add 'haskell-indentation-newline-and-indent
+                  :after 'haskell-indentation-advice)
       ;; keybindings
-      (bind-key "<return>" 'electric-newline-and-maybe-indent haskell-mode-map)
       (bind-key "M-p"         'flycheck-previous-error haskell-mode-map)
       (bind-key "M-n"         'flycheck-next-error haskell-mode-map)
 

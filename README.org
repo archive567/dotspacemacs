@@ -15,3 +15,14 @@ ln -s .cache
 ln -s elpa
 ln -s dotspacemacs ~/.spacemacs.d
 ln -s spacemacs ~/.emacs.d
+* TODO Haskell layer tweaks
+SCHEDULED: <2016-03-27 Sun>
+
+- [X] M-n M-p
+- [X] flycheck display not a pop up
+- [X] goto definition
+- [ ] latest haskell layer changes
+- [ ] show type
+- [ ] enable ghci-ng
+- [ ] stack ghci alice issue
+- [ ] audit haskell bindings
