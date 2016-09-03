@@ -9,11 +9,6 @@
    (quote
     ("e8825f26af32403c5ad8bc983f8610a4a4786eb55e3a363fa9acb48e0677fe7e" default)))
  '(dired-auto-revert-buffer t)
- '(erc-autojoin-mode t)
- '(erc-hide-list (quote ("JOIN" "KICK" "NICK" "PART" "QUIT")))
- '(erc-log-channels-directory "~/.spacemacs.d/.cache/erclog" t)
- '(erc-log-mode t)
- '(erc-nick "tonyday567")
  '(evil-escape-key-sequence "jk")
  '(flycheck-display-errors-function (quote flycheck-display-error-messages))
  '(haskell-font-lock-symbols t)
@@ -55,14 +50,8 @@
              ((org-agenda-overriding-header "done and dusted"))))
       nil nil)
      ("x" "sandpit" tags "+SCHEDULED>=\"<2008-10-11>\"" nil))))
- '(org-agenda-deadline-leaders (quote ("Deadline:  " "In %3d d.: " "%2d d. ago: ")))
  '(org-agenda-diary-file (quote diary-file))
  '(org-agenda-dim-blocked-tasks nil)
- '(org-agenda-export-html-style
-   "<link rel=\\\"stylesheet\\\" href=\\\"http://scarcecapital.com/style/css/scarce.css\\\" type=\\\"text/css\\\" />")
- '(org-agenda-files
-   (quote
-    ("~/stuff/haskell.org" "~/stuff/emacs.org" "~/stuff/bugz.org" "~/stuff/life.org" "~/stuff/refile.org" "~/stuff/stuff.org")))
  '(org-agenda-include-diary nil)
  '(org-agenda-ndays 1)
  '(org-agenda-persistent-filter t)
@@ -94,12 +83,6 @@
      (org . t)
      (js . t)
      (haskell \.t))))
- '(org-babel-post-tangle-hook
-   (quote
-    ((lambda nil
-       (progn
-         (delete-leading-whitespace)
-         (save-buffer))))))
  '(org-babel-results-keyword "results")
  '(org-capture-bookmark nil)
  '(org-capture-templates
