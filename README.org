@@ -1,17 +1,22 @@
 * my personal spacemacs dot files
-* notes on setting up spacemacs
+- modern haskell workflow 
+- a few tweaks to org and basic operations
 
-fork spacemacs
-git clone fork
+* setup from scratch
+** TODO refresh spacemacs
+
+git clone https://github.com/syl20bnr/spacemacs
+cd spacemacs
 git checkout develop
-
-mkdir dotspacemacs
-
-copy .spacemacs to dotspacemacs/init.el
-copy spacemacs elpa to dotspacemacs/elpa
-copy .cache to dotspacemacs/.cache
-
-ln -s .cache
-ln -s elpa
+ln -s ../dotspacemacs/.cache
+ln -s ../dotspacemacs/elpa
+cd ..
 ln -s dotspacemacs ~/.spacemacs.d
 ln -s spacemacs ~/.emacs.d
+
+** TODO new dotspacemacs
+
+mkdir dotspacemacs
+cp spacemacs/.spacemacs dotspacemacs/init.el
+cp spacemacs/elpa dotspacemacs/elpa
+cp spacemacs/.cache dotspacemacs/.cache
