@@ -28,13 +28,12 @@ values."
      erc
      git
      github
-     ;; td-haskell
      (haskell
       :variables
       haskell-completion-backend 'intero
-      haskell-enable-shm-support nil
       haskell-enable-hindent-style 'gibiansky
       )
+     td-haskell
      markdown
      miscellanea
      org
@@ -47,15 +46,17 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages then consider to create a layer, you can also put the
    ;; configuration in `dotspacemacs/config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages
+   '(intero)
+
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages
    '(
      gnus
      ox-pandoc
      helm-flycheck
-     ;; hrefactor
      flycheck-pos-tip
+     evil-unimpaired
      )
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
@@ -88,18 +89,13 @@ values."
    ;; List of items to show in the startup buffer. If nil it is disabled.
    ;; Possible values are: `recents' `bookmarks' `projects'.
    ;; (default '(recents projects bookmarks))
-   dotspacemacs-startup-lists '(agenda todos recents projects bookmarks)
+   dotspacemacs-startup-lists '((projects . 10) agenda)
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
-                         farmhouse-light
-                         leuven
-                         ;; farmhouse-light
+   dotspacemacs-themes '(farmhouse-light
                          spacemacs-dark
-                         solarized-light
-                         solarized-dark
-                         spacemacs-light
+                         leuven
                          monokai
                          zenburn)
    ;; If non nil the cursor color matches the state color.
@@ -217,21 +213,57 @@ user code."
   "Configuration function for user code.
  This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
+  (bind-key* "M-n" 'flycheck-next-error)
+  (bind-key* "M-p" 'flycheck-previous-error)
+  (spacemacs/add-flycheck-hook 'literate-haskell-mode)
+  (bind-key* "C-<return>" 'other-window)
+  (bind-key* "C-x C-k"     'kill-region)
+  (evil-leader/set-key
+    ",,"  'other-window
+    ",+"  'text-scale-increase
+    ",-"  'text-scale-decrease
+    ",["  'align-regexp
+    ",fd" 'miscellanea/default-frame
+    ",fm" 'miscellanea/max-frame
+    ",fr" 'miscellanea/default-right-frame
+    ",ft" 'miscellanea/toggle-size
+    ",fo" 'other-frame
+    ",fn" 'make-frame
+    ",s"  'miscellanea/transpose-windows
+    ",ir" 'miscellanea/indent-region
+    ",ib" 'miscellanea/indent-buffer
+    ",pf" 'miscellanea/refill-region
+    ",pu" 'miscellanea/unfill-region
+    ",pc" 'set-fill-column
+    ",pt" 'toggle-truncate-lines
+    ",an" 'find-name-dired
+    ",ex" 'pp-eval-last-sexp
+    ",ff" 'ff-find-other-file
+    ",fl" 'find-library
+    ",er" 'eval-region
+    ",hr" 'helm-recentf
+    ",lk" 'keep-lines
+    ",bc" 'clean-buffer-list
+    ",="  'count-matches
+    ",lf" 'flush-lines
+    ",hc" 'finder-commentary
+    ",he" 'view-echo-area-messages
+    ",hf" 'find-function
+    ",hF" 'find-face-definition
+    ",hi" 'info-apropos
+    ",hk" 'find-function-on-key
+    ",hl" 'find-library
+    ",hv" 'find-variable
+    ",hV" 'apropos-value
+    ",db" 'ediff-buffers
+    ",df" 'ediff-files
+    ",dr" 'ediff-reveision
+    ",dl" 'ediff-regions-linewise
+    ",dw" 'ediff-regions-wordwise
+    "j SPC" 'describe-bindings
+    )
+  (miscellanea/default-frame)
   (setq custom-file "~/.spacemacs.d/settings.el")
   (when dotspacemacs-load-custom-file
     (load custom-file))
 )
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (hlint-refactor llvm-mode intero goto-chg undo-tree diminish company-ghci org-download eyebrowse evil-visual-mark-mode darkokai-theme column-enforce-mode pyvenv pytest pyenv-mode pip-requirements live-py-mode hy-mode helm-pydoc ein websocket cython-mode company-anaconda anaconda-mode pythonic uuidgen link-hint helm-hoogle evil-ediff f alert log4e gntp parent-mode request logito pcache pkg-info epl flx iedit pos-tip powerline hydra spinner markdown-mode s gh flycheck magit magit-popup git-commit with-editor smartparens ghc haskell-mode yasnippet avy auto-complete packed company highlight anzu gitignore-mode projectile dash helm popup helm-core async package-build bind-key bind-map evil railscasts-theme omtose-phellack-theme majapahit-theme dracula-theme zonokai-theme zenburn-theme zen-and-art-theme ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe use-package underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme tronesque-theme toxi-theme toc-org tao-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes subatomic256-theme subatomic-theme stekene-theme spray spacemacs-theme spaceline spacegray-theme soothe-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme smooth-scrolling smeargle shm seti-theme reverse-theme restart-emacs rainbow-delimiters quelpa purple-haze-theme professional-theme popwin planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme persp-mode pcre2el pastels-on-dark-theme paradox page-break-lines orgit organic-green-theme org-repo-todo org-present org-pomodoro org-plus-contrib org-bullets open-junk-file oldlace-theme occidental-theme obsidian-theme noctilux-theme niflheim-theme neotree naquadah-theme mustang-theme move-text monokai-theme monochrome-theme molokai-theme moe-theme mmm-mode minimal-theme material-theme markdown-toc magit-gitflow magit-gh-pulls macrostep lush-theme lorem-ipsum linum-relative light-soap-theme leuven-theme jbeans-theme jazz-theme ir-black-theme inkpot-theme info+ indent-guide ido-vertical-mode hungry-delete htmlize hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation heroku-theme hemisu-theme help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag hc-zenburn-theme haskell-snippets gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme google-translate golden-ratio gnuplot github-clone github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gist gh-md gandalf-theme flycheck-pos-tip flycheck-haskell flx-ido flatui-theme flatland-theme firebelly-theme fill-column-indicator farmhouse-theme fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-leader evil-jumper evil-indent-textobject evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu espresso-theme erc-yt erc-view-log erc-terminal-notifier erc-social-graph erc-image erc-hl-nicks elisp-slime-nav django-theme define-word darktooth-theme darkmine-theme darkburn-theme dakrone-theme cyberpunk-theme company-statistics company-quickhelp company-ghc company-cabal colorsarenice-theme color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized cmm-mode clues-theme clean-aindent-mode cherry-blossom-theme busybee-theme buffer-move bubbleberry-theme bracketed-paste birds-of-paradise-plus-theme badwolf-theme auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes aggressive-indent afternoon-theme adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )

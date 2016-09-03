@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-# name: IBS
-# --
-import Data.ByteString (ByteString)

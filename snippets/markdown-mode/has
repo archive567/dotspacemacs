@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: has
-# --
-~~~ {lang="haskell"}
-`yas-selected-text`$0
-~~
