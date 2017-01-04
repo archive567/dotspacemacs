@@ -52,6 +52,9 @@
      ("x" "sandpit" tags "+SCHEDULED>=\"<2008-10-11>\"" nil))))
  '(org-agenda-diary-file (quote diary-file))
  '(org-agenda-dim-blocked-tasks nil)
+ '(org-agenda-files
+   (quote
+    ("~/stuff/docs/tax/scarcetax.org" "~/stuff/sys.org" "~/stuff/stuff.org" "~/stuff/refile.org" "~/stuff/life.org" "~/stuff/emacs.org" "~/stuff/bugz.org")))
  '(org-agenda-include-diary nil)
  '(org-agenda-ndays 1)
  '(org-agenda-persistent-filter t)
@@ -89,18 +92,12 @@
    (quote
     (("r" "refile" entry
       (file "~/stuff/refile.org")
-      "* %?
+      "* TODO %?
 ")
      ("z" "bugz" entry
       (file+headline "~/stuff/sys/bugz.org" "bugz!")
       "* TODO %?
-%a")
-     ("h" "haskell refile" entry
-      (file "~/stuff/refile.org")
-      "* %?
-#+begin_src haskell
-%c
-#+end_src"))))
+%a"))))
  '(org-clock-clocked-in-display (quote mode-line))
  '(org-clock-idle-time 10)
  '(org-completion-use-ido t)
@@ -185,7 +182,7 @@
  '(package-selected-packages
    (quote
     (csv-mode hlint-refactor llvm-mode intero goto-chg undo-tree diminish company-ghci org-download eyebrowse evil-visual-mark-mode darkokai-theme column-enforce-mode pyvenv pytest pyenv-mode pip-requirements live-py-mode hy-mode helm-pydoc ein websocket cython-mode company-anaconda anaconda-mode pythonic uuidgen link-hint helm-hoogle evil-ediff f alert log4e gntp parent-mode request logito pcache pkg-info epl flx iedit pos-tip powerline hydra spinner markdown-mode s gh flycheck magit magit-popup git-commit with-editor smartparens ghc haskell-mode yasnippet avy auto-complete packed company highlight anzu gitignore-mode projectile dash helm popup helm-core async package-build bind-key bind-map evil railscasts-theme omtose-phellack-theme majapahit-theme dracula-theme zonokai-theme zenburn-theme zen-and-art-theme ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe use-package underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme tronesque-theme toxi-theme toc-org tao-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes subatomic256-theme subatomic-theme stekene-theme spray spacemacs-theme spaceline spacegray-theme soothe-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme smooth-scrolling smeargle shm seti-theme reverse-theme restart-emacs rainbow-delimiters quelpa purple-haze-theme professional-theme popwin planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme persp-mode pcre2el pastels-on-dark-theme paradox page-break-lines orgit organic-green-theme org-repo-todo org-present org-pomodoro org-plus-contrib org-bullets open-junk-file oldlace-theme occidental-theme obsidian-theme noctilux-theme niflheim-theme neotree naquadah-theme mustang-theme move-text monokai-theme monochrome-theme molokai-theme moe-theme mmm-mode minimal-theme material-theme markdown-toc magit-gitflow magit-gh-pulls macrostep lush-theme lorem-ipsum linum-relative light-soap-theme leuven-theme jbeans-theme jazz-theme ir-black-theme inkpot-theme info+ indent-guide ido-vertical-mode hungry-delete htmlize hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation heroku-theme hemisu-theme help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag hc-zenburn-theme haskell-snippets gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme google-translate golden-ratio gnuplot github-clone github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gist gh-md gandalf-theme flycheck-pos-tip flycheck-haskell flx-ido flatui-theme flatland-theme firebelly-theme fill-column-indicator farmhouse-theme fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-leader evil-jumper evil-indent-textobject evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu espresso-theme erc-yt erc-view-log erc-terminal-notifier erc-social-graph erc-image erc-hl-nicks elisp-slime-nav django-theme define-word darktooth-theme darkmine-theme darkburn-theme dakrone-theme cyberpunk-theme company-statistics company-quickhelp company-ghc company-cabal colorsarenice-theme color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized cmm-mode clues-theme clean-aindent-mode cherry-blossom-theme busybee-theme buffer-move bubbleberry-theme bracketed-paste birds-of-paradise-plus-theme badwolf-theme auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes aggressive-indent afternoon-theme adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
- '(paradox-execute-asynchronously t)
+ '(paradox-execute-asynchronously t t)
  '(paradox-github-token "9c0337a9d7ffbfa53d06bf294278dc777a2b77c9")
  '(projectile-known-projects-file "~/.spacemacs.d/.cache/projectile-bookmarks.eld")
  '(reb-re-syntax (quote read))
