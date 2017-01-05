@@ -385,8 +385,182 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
-
- ;; this needs to be here, rather than in the settings file
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(custom-safe-themes
+   (quote
+    ("e8825f26af32403c5ad8bc983f8610a4a4786eb55e3a363fa9acb48e0677fe7e" default)))
+ '(dired-auto-revert-buffer t)
+ '(evil-escape-key-sequence "jk")
+ '(flycheck-display-errors-function (quote flycheck-display-error-messages))
+ '(haskell-font-lock-symbols t)
+ '(haskell-hayoo-url "http://hayoo.fh-wedel.de/?query=%s")
+ '(haskell-hoogle-url "https://www.stackage.org/lts/hoogle/?q=%s")
+ '(haskell-indent-spaces 4)
+ '(haskell-indentation-layout-offset 4)
+ '(haskell-indentation-left-offset 4)
+ '(haskell-indentation-starter-offset 2)
+ '(haskell-indentation-where-post-offset 2)
+ '(haskell-indentation-where-pre-offset 2)
+ '(hl-paren-background-colors (quote ("#2492db" "#95a5a6" nil)))
+ '(hl-paren-colors (quote ("#ecf0f1" "#ecf0f1" "#c0392b")))
+ '(ido-auto-merge-delay-time 4)
+ '(org-M-RET-may-split-line (quote ((headline . t))))
+ '(org-adapt-indentation nil)
+ '(org-agenda-compact-blocks t)
+ '(org-agenda-custom-commands
+   (quote
+    (("n" "Agenda and all TODO's"
+      ((agenda ""
+               ((org-agenda-overriding-header "today")))
+       (tags "REFILE"
+             ((org-agenda-overriding-header "refile me pls")
+              (org-tags-match-list-sublevels nil)))
+       (todo "+TODO='NEXT'" nil)
+       (todo "+TODO='TODO'" nil))
+      nil)
+     ("z" "draft full agenda"
+      ((agenda ""
+               ((org-agenda-overriding-header "today")))
+       (tags "REFILE"
+             ((org-agenda-overriding-header "refiles")))
+       (tags "TODO=\"TODO\"+SCHEDULED>\"<today>\""
+             ((org-agenda-overriding-header "scheduled")))
+       (tags "TODO=\"TODO\"-SCHEDULED<=\"<today>\"-SCHEDULED>\"<today>\""
+             ((org-agenda-overriding-header "the rest")))
+       (tags "TODO=\"DONE\""
+             ((org-agenda-overriding-header "done and dusted"))))
+      nil nil)
+     ("x" "sandpit" tags "+SCHEDULED>=\"<2008-10-11>\"" nil))))
+ '(org-agenda-diary-file (quote diary-file))
+ '(org-agenda-dim-blocked-tasks nil)
+ '(org-agenda-files
+   (quote
+    ("~/git/org/sys.org" "~/git/org/stuff.org" "~/git/org/refile.org" "~/git/org/life.org" "~/git/org/emacs.org" "~/git/org/bugz.org" "~/git/org/work.org")))
+ '(org-agenda-include-diary nil)
+ '(org-agenda-ndays 1)
+ '(org-agenda-persistent-filter t)
+ '(org-agenda-scheduled-leaders (quote ("" "S%d: ")))
+ '(org-agenda-skip-additional-timestamps-same-entry t)
+ '(org-agenda-skip-deadline-if-done t)
+ '(org-agenda-skip-scheduled-if-deadline-is-shown t)
+ '(org-agenda-skip-scheduled-if-done t)
+ '(org-agenda-skip-timestamp-if-done t)
+ '(org-agenda-skip-unavailable-files t)
+ '(org-agenda-sorting-strategy
+   (quote
+    ((agenda habit-down time-up todo-state-up user-defined-up priority-down effort-up category-keep)
+     (todo category-up priority-down effort-up)
+     (tags category-up priority-down effort-up)
+     (search category-keep))))
+ '(org-agenda-span (quote day))
+ '(org-agenda-start-on-weekday nil)
+ '(org-agenda-tags-column -102)
+ '(org-agenda-tags-todo-honor-ignore-options t)
+ '(org-agenda-text-search-extra-files nil)
+ '(org-agenda-use-time-grid nil)
+ '(org-agenda-window-setup (quote current-window))
+ '(org-babel-load-languages
+   (quote
+    ((emacs-lisp . t)
+     (sh . t)
+     (dot . t)
+     (org . t)
+     (js . t)
+     (haskell \.t))))
+ '(org-babel-results-keyword "results")
+ '(org-capture-bookmark nil)
+ '(org-capture-templates
+   (quote
+    (("r" "refile" entry
+      (file "~/stuff/refile.org")
+      "* TODO %?
+")
+     ("z" "bugz" entry
+      (file+headline "~/stuff/sys/bugz.org" "bugz!")
+      "* TODO %?
+%a"))))
+ '(org-clock-clocked-in-display (quote mode-line))
+ '(org-clock-idle-time 10)
+ '(org-completion-use-ido t)
+ '(org-confirm-babel-evaluate nil)
+ '(org-confirm-elisp-link-function nil)
+ '(org-crypt-disable-auto-save nil)
+ '(org-crypt-key "F0B66B40")
+ '(org-cycle-global-at-bob t)
+ '(org-cycle-separator-lines 0)
+ '(org-deadline-warning-days 5)
+ '(org-default-notes-file "~/stuff/org/refile.org")
+ '(org-directory "~/stuff")
+ '(org-edit-src-content-indentation 0)
+ '(org-enable-priority-commands nil)
+ '(org-enforce-todo-dependencies t)
+ '(org-entities-user
+   (quote
+    (("hardbreak" "\\\\" nil "" "" "" "")
+     ("greytext" "\\\\color{greytext}" nil "" "" "" ""))))
+ '(org-export-babel-evaluate nil)
+ '(org-export-copy-to-kill-ring t)
+ '(org-export-date-timestamp-format "%Y-%m-%d")
+ '(org-export-html-inline-images t)
+ '(org-export-html-link-home "www.scarcecapital.com")
+ '(org-export-html-postamble nil)
+ '(org-export-html-style "")
+ '(org-export-html-style-extra "")
+ '(org-export-html-style-include-default nil)
+ '(org-export-html-xml-declaration
+   (quote
+    (("html" . "")
+     ("was-html" . "<?xml version=\"1.0\" encoding=\"%s\"?>")
+     ("php" . "<?php echo \"<?xml version=\\\"1.0\\\" encoding=\\\"%s\\\" ?>\"; ?>"))))
+ '(org-export-with-drawers nil)
+ '(org-export-with-tags nil)
+ '(org-export-with-timestamps nil)
+ '(org-fast-tag-selection-single-key (quote expert))
+ '(org-footnote-section nil)
+ '(org-from-is-user-regexp "\\<tony day\\>")
+ '(org-hide-leading-stars nil)
+ '(org-html-head-include-default-style nil)
+ '(org-html-head-include-scripts nil)
+ '(org-html-htmlize-output-type (quote css))
+ '(org-html-postamble nil)
+ '(org-insert-heading-respect-content nil)
+ '(org-latex-to-pdf-process
+   (quote
+    ("xelatex -interaction nonstopmode -output-directory %o %f" "xetex %f")))
+ '(org-link-abbrev-alist (quote (("google" . "http://www.google.com/search?q="))))
+ '(org-log-done nil)
+ '(org-log-into-drawer "LOGBOOK")
+ '(org-modules (quote (org-id org-info)))
+ '(org-outline-path-complete-in-steps nil)
+ '(org-provide-todo-statistics nil)
+ '(org-refile-allow-creating-parent-nodes (quote confirm))
+ '(org-refile-target-verify-function nil)
+ '(org-refile-targets (quote ((org-agenda-files :maxlevel . 2))))
+ '(org-refile-use-outline-path (quote file))
+ '(org-remove-highlights-with-change nil)
+ '(org-return-follows-link t)
+ '(org-show-notification-handler (quote alert))
+ '(org-src-fontify-natively t)
+ '(org-src-lang-modes
+   (quote
+    (("plantuml" . fundamental)
+     ("ocaml" . tuareg)
+     ("elisp" . emacs-lisp)
+     ("ditaa" . artist)
+     ("asymptote" . asy)
+     ("dot" . graphviz-dot)
+     ("sqlite" . sql)
+     ("calc" . fundamental)
+     ("C" . c)
+     ("cpp" . c++)
+     ("screen" . shell-script)
+     ("R" . R)
+     ("haskell" . haskell))))
+ '(org-src-preserve-indentation t)
+ '(org-startup-folded t)
+ '(org-startup-indented t)
+ '(org-support-shift-select t)
  '(package-archives
    (quote
     (("melpa" . "http://melpa.org/packages/")
@@ -394,11 +568,48 @@ This function is called at the very end of Spacemacs initialization."
      ("gnu" . "http://elpa.gnu.org/packages/"))))
  '(package-selected-packages
    (quote
-    (zenburn-theme yaml-mode ws-butler window-numbering which-key volatile-highlights use-package ujelly-theme twilight-anti-bright-theme toc-org tao-theme tango-plus-theme spacemacs-theme spaceline powerline smeargle seti-theme restart-emacs planet-theme phoenix-dark-pink-theme persp-mode pcre2el paradox spinner orgit org organic-green-theme org-projectile org-pomodoro alert org-plus-contrib org-download open-junk-file omtose-phellack-theme noctilux-theme neotree naquadah-theme move-text monokai-theme moe-theme minimal-theme material-theme markdown-toc markdown-mode majapahit-theme magit-gitflow magit-gh-pulls macrostep link-hint jazz-theme intero inkpot-theme info+ indent-guide hydra hungry-delete htmlize hl-todo hindent highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-make projectile helm-hoogle helm-descbinds helm-company helm-c-yasnippet helm-ag gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme google-translate github-search github-clone gitconfig-mode git-timemachine git-messenger git-link gist gh marshal pcache ht flatui-theme eyebrowse expand-region exec-path-from-shell evil-surround evil-search-highlight-persist evil-nerd-commenter evil-mc evil-matchit evil-magit magit magit-popup git-commit with-editor evil-iedit-state iedit evil-exchange evil-escape evil-ediff dumb-jump dracula-theme darktooth-theme autothemer darkokai-theme cyberpunk-theme company-statistics column-enforce-mode color-theme-sanityinc-tomorrow clues-theme bind-key badwolf-theme auto-yasnippet auto-compile apropospriate-theme anti-zenburn-theme ample-theme alect-themes aggressive-indent ace-window ace-link ace-jump-helm-line avy auto-complete ghc company highlight anzu smartparens bind-map f s evil undo-tree haskell-mode flycheck dash yasnippet request helm helm-core popup async farmhouse-theme zonokai-theme zen-and-art-theme vi-tilde-fringe uuidgen underwater-theme twilight-theme twilight-bright-theme tronesque-theme toxi-theme tangotango-theme tango-2-theme sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spacegray-theme sourcerer-theme soothe-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme reverse-theme rainbow-delimiters railscasts-theme quelpa purple-haze-theme professional-theme popwin pkg-info phoenix-dark-mono-theme pastels-on-dark-theme parent-mode packed org-present org-bullets oldlace-theme occidental-theme obsidian-theme niflheim-theme mustang-theme monochrome-theme molokai-theme mmm-mode lush-theme lorem-ipsum logito log4e linum-relative light-soap-theme jbeans-theme ir-black-theme ido-vertical-mode hlint-refactor highlight-parentheses hide-comnt heroku-theme hemisu-theme helm-purpose helm-mode-manager helm-gitignore helm-flx hc-zenburn-theme haskell-snippets goto-chg golden-ratio gnuplot gntp github-browse-file gitattributes-mode gh-md gandalf-theme flycheck-pos-tip flycheck-haskell flx-ido flatland-theme firebelly-theme fill-column-indicator fancy-battery evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-numbers evil-lisp-state evil-indent-plus evil-args evil-anzu eval-sexp-fu espresso-theme elisp-slime-nav django-theme diminish define-word darkmine-theme darkburn-theme dakrone-theme company-ghci company-ghc company-cabal color-theme-sanityinc-solarized cmm-mode clean-aindent-mode cherry-blossom-theme busybee-theme bubbleberry-theme birds-of-paradise-plus-theme auto-highlight-symbol ample-zen-theme afternoon-theme adaptive-wrap ac-ispell))))
+    (zenburn-theme yaml-mode ws-butler window-numbering which-key volatile-highlights use-package ujelly-theme twilight-anti-bright-theme toc-org tao-theme tango-plus-theme spacemacs-theme spaceline powerline smeargle seti-theme restart-emacs planet-theme phoenix-dark-pink-theme persp-mode pcre2el paradox spinner orgit org organic-green-theme org-projectile org-pomodoro alert org-plus-contrib org-download open-junk-file omtose-phellack-theme noctilux-theme neotree naquadah-theme move-text monokai-theme moe-theme minimal-theme material-theme markdown-toc markdown-mode majapahit-theme magit-gitflow magit-gh-pulls macrostep link-hint jazz-theme intero inkpot-theme info+ indent-guide hydra hungry-delete htmlize hl-todo hindent highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-make projectile helm-hoogle helm-descbinds helm-company helm-c-yasnippet helm-ag gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme google-translate github-search github-clone gitconfig-mode git-timemachine git-messenger git-link gist gh marshal pcache ht flatui-theme eyebrowse expand-region exec-path-from-shell evil-surround evil-search-highlight-persist evil-nerd-commenter evil-mc evil-matchit evil-magit magit magit-popup git-commit with-editor evil-iedit-state iedit evil-exchange evil-escape evil-ediff dumb-jump dracula-theme darktooth-theme autothemer darkokai-theme cyberpunk-theme company-statistics column-enforce-mode color-theme-sanityinc-tomorrow clues-theme bind-key badwolf-theme auto-yasnippet auto-compile apropospriate-theme anti-zenburn-theme ample-theme alect-themes aggressive-indent ace-window ace-link ace-jump-helm-line avy auto-complete ghc company highlight anzu smartparens bind-map f s evil undo-tree haskell-mode flycheck dash yasnippet request helm helm-core popup async farmhouse-theme zonokai-theme zen-and-art-theme vi-tilde-fringe uuidgen underwater-theme twilight-theme twilight-bright-theme tronesque-theme toxi-theme tangotango-theme tango-2-theme sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spacegray-theme sourcerer-theme soothe-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme reverse-theme rainbow-delimiters railscasts-theme quelpa purple-haze-theme professional-theme popwin pkg-info phoenix-dark-mono-theme pastels-on-dark-theme parent-mode packed org-present org-bullets oldlace-theme occidental-theme obsidian-theme niflheim-theme mustang-theme monochrome-theme molokai-theme mmm-mode lush-theme lorem-ipsum logito log4e linum-relative light-soap-theme jbeans-theme ir-black-theme ido-vertical-mode hlint-refactor highlight-parentheses hide-comnt heroku-theme hemisu-theme helm-purpose helm-mode-manager helm-gitignore helm-flx hc-zenburn-theme haskell-snippets goto-chg golden-ratio gnuplot gntp github-browse-file gitattributes-mode gh-md gandalf-theme flycheck-pos-tip flycheck-haskell flx-ido flatland-theme firebelly-theme fill-column-indicator fancy-battery evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-numbers evil-lisp-state evil-indent-plus evil-args evil-anzu eval-sexp-fu espresso-theme elisp-slime-nav django-theme diminish define-word darkmine-theme darkburn-theme dakrone-theme company-ghci company-ghc company-cabal color-theme-sanityinc-solarized cmm-mode clean-aindent-mode cherry-blossom-theme busybee-theme bubbleberry-theme birds-of-paradise-plus-theme auto-highlight-symbol ample-zen-theme afternoon-theme adaptive-wrap ac-ispell)))
+ '(paradox-execute-asynchronously t t)
+ '(paradox-github-token "9c0337a9d7ffbfa53d06bf294278dc777a2b77c9")
+ '(projectile-known-projects-file "~/.spacemacs.d/.cache/projectile-bookmarks.eld")
+ '(reb-re-syntax (quote read))
+ '(recentf-save-file "~/.spacemacs.d/.cache/recentf")
+ '(tags-add-tables nil)
+ '(tramp-persistency-file-name "~/.spacemacs.d/.cache/tramp" t)
+ '(vc-annotate-background "#ecf0f1")
+ '(vc-annotate-color-map
+   (quote
+    ((30 . "#e74c3c")
+     (60 . "#c0392b")
+     (90 . "#e67e22")
+     (120 . "#d35400")
+     (150 . "#f1c40f")
+     (180 . "#d98c10")
+     (210 . "#2ecc71")
+     (240 . "#27ae60")
+     (270 . "#1abc9c")
+     (300 . "#16a085")
+     (330 . "#2492db")
+     (360 . "#0a74b9"))))
+ '(vc-annotate-very-old-color "#0a74b9")
+ '(when
+      (or
+       (not
+        (boundp
+         (quote ansi-term-color-vector)))
+       (not
+        (facep
+         (aref ansi-term-color-vector 0)))))
+ '(yas-fallback-behavior (quote call-other-command))
+ '(yas-indent-line (quote nothing))
+ '(yas-prompt-functions (quote (yas-ido-prompt yas-dropdown-prompt)))
+ '(yas-triggers-in-field t)
+ '(yas-wrap-around-region t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
 )
