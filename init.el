@@ -47,7 +47,6 @@ values."
       )
      td-haskell
      markdown
-     miscellanea
      org
      org-ext
      themes-megapack
@@ -324,58 +323,73 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
+  ;; fixme: add to haskell-ext
   (bind-key* "M-n" 'flycheck-next-error)
   (bind-key* "M-p" 'flycheck-previous-error)
-  (bind-key* "C-<return>" 'other-window)
   (spacemacs/add-flycheck-hook 'literate-haskell-mode)
-  (evil-leader/set-key
-    ",,"  'other-window
-    ",+"  'text-scale-increase
-    ",-"  'text-scale-decrease
-    ",fd" 'miscellanea/default-frame
-    ",fm" 'miscellanea/max-frame
-    ",fr" 'miscellanea/default-right-frame
-    ",ft" 'miscellanea/toggle-size
-    ",fo" 'other-frame
-    ",fn" 'make-frame
-    ",s"  'miscellanea/transpose-windows
-    ",ir" 'miscellanea/indent-region
-    ",ib" 'miscellanea/indent-buffer
-    ",pf" 'miscellanea/refill-region
-    ",pu" 'miscellanea/unfill-region
-    ",pc" 'set-fill-column
-    ",pt" 'toggle-truncate-lines
-    ",an" 'find-name-dired
-    ",ex" 'pp-eval-last-sexp
-    ",ff" 'ff-find-other-file
-    ",fl" 'find-library
-    ",er" 'eval-region
-    ",hr" 'helm-recentf
-    ",lk" 'keep-lines
-    ",bc" 'clean-buffer-list
-    ",="  'count-matches
-    ",lf" 'flush-lines
-    ",hb" 'describe-bindings
-    ",hc" 'finder-commentary
-    ",he" 'view-echo-area-messages
-    ",hf" 'find-function
-    ",hF" 'find-face-definition
-    ",hi" 'info-apropos
-    ",hk" 'find-function-on-key
-    ",hl" 'find-library
-    ",hv" 'find-variable
-    ",hV" 'apropos-value
-    ",db" 'ediff-buffers
-    ",df" 'ediff-files
-    ",dr" 'ediff-reveision
-    ",dl" 'ediff-regions-linewise
-    ",dw" 'ediff-regions-wordwise
-    )
-  (miscellanea/default-frame)
-  (load "~/.spacemacs.d/settings.el")
-  )
 
-(defun dotspacemacs/emacs-custom-settings ()
+  (evil-leader/set-key
+    "wa" 'default-frame
+    "wA" 'max-frame
+    "we" 'default-right-frame
+    "wT" 'toggle-frame-size)
+
+  (defun default-frame ()
+    (interactive)
+    (set-frame-parameter (selected-frame) 'fullscreen nil)
+    (set-frame-parameter (selected-frame) 'vertical-scroll-bars nil)
+    (set-frame-parameter (selected-frame) 'horizontal-scroll-bars nil)
+    (set-frame-parameter (selected-frame) 'top 20)
+    (set-frame-parameter (selected-frame) 'left 1)
+    (set-frame-parameter (selected-frame) 'height 47)
+    (set-frame-parameter (selected-frame) 'width 85))
+
+  (defun default-right-frame ()
+    (interactive)
+    (set-frame-parameter (selected-frame) 'fullscreen nil)
+    (set-frame-parameter (selected-frame) 'vertical-scroll-bars nil)
+    (set-frame-parameter (selected-frame) 'horizontal-scroll-bars nil)
+    (set-frame-parameter (selected-frame) 'top 20)
+    (set-frame-parameter (selected-frame) 'left 735)
+    (set-frame-parameter (selected-frame) 'height 47)
+    (set-frame-parameter (selected-frame) 'width 85))
+
+  (defun max-frame ()
+    (interactive)
+    (if t
+        (progn
+          (set-frame-parameter (selected-frame) 'fullscreen 'fullboth)
+          (set-frame-parameter (selected-frame) 'vertical-scroll-bars nil)
+          (set-frame-parameter (selected-frame) 'horizontal-scroll-bars nil))
+      (set-frame-parameter (selected-frame) 'top 26)
+      (set-frame-parameter (selected-frame) 'left 2)
+      (set-frame-parameter (selected-frame) 'width
+                           (floor (/ (float (x-display-pixel-width)) 9.15)))
+      (if (= 1050 (x-display-pixel-height))
+          (set-frame-parameter (selected-frame) 'height
+                               (if (>= emacs-major-version 24)
+                                   66
+                                 55))
+        (set-frame-parameter (selected-frame) 'height
+                             (if (>= emacs-major-version 24)
+                                 75
+                               64)))))
+
+  (defun toggle-frame-size ()
+    (interactive)
+    (if (> (cdr (assq 'width (frame-parameters))) 100)
+        (min-frame)
+      (max-frame)))
+
+  (default-frame)
+
+  ;; fixme
+  (setenv "PATH"
+          (concat
+           (getenv "PATH")
+           ";C:\\Users\\ajdayz\\AppData\\Local\\Programs\\Git\\usr\\bin")))
+
+( dotspacemacs/emacs-custom-settings ()
   "Emacs custom settings.
 This is an auto-generated function, do not modify its content directly, use
 Emacs customize menu instead.
