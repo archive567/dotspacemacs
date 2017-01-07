@@ -389,11 +389,6 @@ you should place your code here."
            (getenv "PATH")
            ";C:\\Users\\ajdayz\\AppData\\Local\\Programs\\Git\\usr\\bin")))
 
-( dotspacemacs/emacs-custom-settings ()
-  "Emacs custom settings.
-This is an auto-generated function, do not modify its content directly, use
-Emacs customize menu instead.
-This function is called at the very end of Spacemacs initialization."
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -619,6 +614,7 @@ This function is called at the very end of Spacemacs initialization."
  '(yas-prompt-functions (quote (yas-ido-prompt yas-dropdown-prompt)))
  '(yas-triggers-in-field t)
  '(yas-wrap-around-region t))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -626,4 +622,3 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
  '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
-)
