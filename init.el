@@ -482,11 +482,11 @@ you should place your code here."
  '(org-capture-templates
    (quote
     (("r" "refile" entry
-      (file "~/stuff/refile.org")
+      (file "~/git/org/refile.org")
       "* TODO %?
 ")
      ("z" "bugz" entry
-      (file+headline "~/stuff/sys/bugz.org" "bugz!")
+      (file+headline "~/git/org/sys/bugz.org" "bugz!")
       "* TODO %?
 %a"))))
  '(org-clock-clocked-in-display (quote mode-line))
