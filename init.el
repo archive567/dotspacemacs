@@ -337,23 +337,53 @@ you should place your code here."
 
   (defun default-frame ()
     (interactive)
-    (set-frame-parameter (selected-frame) 'fullscreen nil)
-    (set-frame-parameter (selected-frame) 'vertical-scroll-bars nil)
-    (set-frame-parameter (selected-frame) 'horizontal-scroll-bars nil)
-    (set-frame-parameter (selected-frame) 'top 20)
-    (set-frame-parameter (selected-frame) 'left 1)
-    (set-frame-parameter (selected-frame) 'height 47)
-    (set-frame-parameter (selected-frame) 'width 85))
+    (cond
+     ((string-equal system-type "windows-nt") ; Microsoft Windows
+      (progn
+        (set-frame-parameter (selected-frame) 'fullscreen nil)
+        (set-frame-parameter (selected-frame) 'vertical-scroll-bars nil)
+        (set-frame-parameter (selected-frame) 'horizontal-scroll-bars nil)
+        (set-frame-parameter (selected-frame) 'top 10)
+        (set-frame-parameter (selected-frame) 'left 6)
+        (set-frame-parameter (selected-frame) 'height 60)
+        (set-frame-parameter (selected-frame) 'width 120)))
+     ((string-equal system-type "darwin") ; Mac OS X
+      (progn
+        (set-frame-parameter (selected-frame) 'fullscreen nil)
+        (set-frame-parameter (selected-frame) 'vertical-scroll-bars nil)
+        (set-frame-parameter (selected-frame) 'horizontal-scroll-bars nil)
+        (set-frame-parameter (selected-frame) 'top 20)
+        (set-frame-parameter (selected-frame) 'left 1)
+        (set-frame-parameter (selected-frame) 'height 47)
+        (set-frame-parameter (selected-frame) 'width 85)))
+     ((string-equal system-type "gnu/linux") ; linux
+      (progn
+        (message "Linux")))))
 
   (defun default-right-frame ()
     (interactive)
-    (set-frame-parameter (selected-frame) 'fullscreen nil)
-    (set-frame-parameter (selected-frame) 'vertical-scroll-bars nil)
-    (set-frame-parameter (selected-frame) 'horizontal-scroll-bars nil)
-    (set-frame-parameter (selected-frame) 'top 20)
-    (set-frame-parameter (selected-frame) 'left 735)
-    (set-frame-parameter (selected-frame) 'height 47)
-    (set-frame-parameter (selected-frame) 'width 85))
+    (cond
+     ((string-equal system-type "windows-nt") ; Microsoft Windows
+      (progn
+        (set-frame-parameter (selected-frame) 'fullscreen nil)
+        (set-frame-parameter (selected-frame) 'vertical-scroll-bars nil)
+        (set-frame-parameter (selected-frame) 'horizontal-scroll-bars nil)
+        (set-frame-parameter (selected-frame) 'top 10)
+        (set-frame-parameter (selected-frame) 'left 2000)
+        (set-frame-parameter (selected-frame) 'height 60)
+        (set-frame-parameter (selected-frame) 'width 120)))
+     ((string-equal system-type "darwin") ; Mac OS X
+      (progn
+        (set-frame-parameter (selected-frame) 'fullscreen nil)
+        (set-frame-parameter (selected-frame) 'vertical-scroll-bars nil)
+        (set-frame-parameter (selected-frame) 'horizontal-scroll-bars nil)
+        (set-frame-parameter (selected-frame) 'top 20)
+        (set-frame-parameter (selected-frame) 'left 735)
+        (set-frame-parameter (selected-frame) 'height 47)
+        (set-frame-parameter (selected-frame) 'width 85)))
+     ((string-equal system-type "gnu/linux") ; linux
+      (progn
+        (message "Linux")))))
 
   (defun max-frame ()
     (interactive)
@@ -488,11 +518,11 @@ This function is called at the very end of Spacemacs initialization."
  '(org-capture-templates
    (quote
     (("r" "refile" entry
-      (file "~/stuff/refile.org")
+      (file "~/git/org/refile.org")
       "* TODO %?
 ")
      ("z" "bugz" entry
-      (file+headline "~/stuff/sys/bugz.org" "bugz!")
+      (file+headline "~/git/org/sys/bugz.org" "bugz!")
       "* TODO %?
 %a"))))
  '(org-clock-clocked-in-display (quote mode-line))
