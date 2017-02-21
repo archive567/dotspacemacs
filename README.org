@@ -1,12 +1,13 @@
 * my personal spacemacs dot files
-- modern haskell workflow 
-- a few tweaks to org and basic operations
+
+- minor tweaks to org and haskell
 - windows and osx
 
 * setup from scratch
 
 ** refresh spacemacs
 
+#+begin_src ssh
 git clone https://github.com/syl20bnr/spacemacs
 cd spacemacs
 git checkout develop
@@ -15,18 +16,24 @@ ln -s ../dotspacemacs/elpa
 cd ..
 ln -s dotspacemacs ~/.spacemacs.d
 ln -s spacemacs ~/.emacs.d
+#+end_src
+
+
 
 ** new dotspacemacs
 
+#+begin_src ssh
 mkdir dotspacemacs
 cp spacemacs/.spacemacs dotspacemacs/init.el
 cp spacemacs/elpa dotspacemacs/elpa
 cp spacemacs/.cache dotspacemacs/.cache
+#+end_src
 
 ** windows
 
-symbolic links were too hard.  Just renamed spacemacs to .emacs.d, and dotspacemacs to .spacemacs.d
+symbolic links were are hard.  
+Instead, renamed spacemacs to .emacs.d, and dotspacemacs to .spacemacs.d
 
-added the following to the path:
+added the following execs to the path:
 - ag
 - diff
