@@ -4,9 +4,6 @@
 (defun td-haskell/post-config-intero ()
     (flycheck-add-next-checker 'intero '(warning . haskell-hlint)))
 
-(defun td-haskell/post-init-flycheck ()
-  (spacemacs/add-flycheck-hook 'literate-haskell-mode))
-
 (spacemacs|use-package-add-hook intero
   :pre-init
   ;; Code

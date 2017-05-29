@@ -327,7 +327,7 @@ you should place your code here."
   ;; fixme: add to haskell-ext
   (bind-key* "M-n" 'flycheck-next-error)
   (bind-key* "M-p" 'flycheck-previous-error)
-  (spacemacs/add-flycheck-hook 'literate-haskell-mode)
+  ;; (spacemacs/add-flycheck-hook 'literate-haskell-mode)
 
   (evil-leader/set-key
     "wa" 'default-frame
