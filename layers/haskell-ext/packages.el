@@ -1,8 +1,5 @@
-(defconst td-haskell-packages
-  '(flycheck))
-
-(defun td-haskell/post-config-intero ()
-    (flycheck-add-next-checker 'intero '(warning . haskell-hlint)))
+(defconst haskell-ext-packages
+  '())
 
 (spacemacs|use-package-add-hook intero
   :pre-init
@@ -38,7 +35,6 @@
         "xs" 'flycheck-select-checker
         "xn" 'flycheck-next-error
         "xp" 'flycheck-previous-error
-        "xh" 'td-haskell-add-hlint
         "ria" 'haskell-align-imports
         "rin" 'haskell-navigate-imports
         "ris" 'haskell-sort-imports
@@ -56,6 +52,3 @@
     (add-hook 'literate-haskell-mode-hook
               (lambda()
                 (setq-local mode-line-process nil)))))
-
-
-
