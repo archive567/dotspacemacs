@@ -18,6 +18,7 @@
   (spacemacs|use-package-add-hook org
     :post-init
     (progn
+
       (add-to-list 'auto-mode-alist '("\\.org_archive\\'" . org-mode))
       (org-babel-do-load-languages
        'org-babel-load-languages

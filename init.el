@@ -45,14 +45,18 @@ values."
       :variables
       haskell-completion-backend 'intero
       )
-     ;; haskell-ext
+     haskell-ext
      ipython-notebook
      markdown
      org
-     ;; org-ext
+     org-ext
+     (shell :variables
+             shell-default-height 30
+             shell-default-position 'bottom)
+     ;; spell-checking
      themes-megapack
      syntax-checking
-     ;; yaml
+     version-control
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -137,7 +141,7 @@ values."
    ;; `recents' `bookmarks' `projects' `agenda' `todos'."
    ;; List sizes may be nil, in which case
    ;; `spacemacs-buffer-startup-lists-length' takes effect.
-   dotspacemacs-startup-lists '((projects . 10) agenda)
+   dotspacemacs-startup-lists '((projects . 10) agenda (recents . 5))
    ;; True if the home buffer should respond to resize events.
    dotspacemacs-startup-buffer-responsive t
    ;; Default major mode of the scratch buffer (default `text-mode')
@@ -518,7 +522,7 @@ This function is called at the very end of Spacemacs initialization."
  '(org-agenda-dim-blocked-tasks nil)
  '(org-agenda-files
    (quote
-    ("H:/git/org/sys.org" "H:/git/org/stuff.org" "H:/git/org/refile.org" "H:/git/org/life.org" "H:/git/org/emacs.org" "H:/git/org/bugz.org" "H:/git/org/work.org")))
+    ("~/git/org/sys.org" "~/git/org/stuff.org" "~/git/org/refile.org" "~/git/org/life.org" "~/git/org/emacs.org" "~/git/org/bugz.org" "~/git/org/work.org")))
  '(org-agenda-include-diary nil)
  '(org-agenda-ndays 1)
  '(org-agenda-persistent-filter t)
@@ -559,7 +563,7 @@ This function is called at the very end of Spacemacs initialization."
       "* TODO %?
 ")
      ("z" "bugz" entry
-      (file+headline "~/git/org/sys/bugz.org" "bugz!")
+      (file+headline "~/git/org/bugz.org" "bugz!")
       "* TODO %?
 %a"))))
  '(org-clock-clocked-in-display (quote mode-line))
