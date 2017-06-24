@@ -10,8 +10,7 @@
   ;; Code
   :post-config
   ;; Code
-  (flycheck-add-next-checker 'intero '(warning . haskell-hlint))
-)
+  (flycheck-add-next-checker 'intero '(warning . haskell-hlint)))
 
 (spacemacs|use-package-add-hook haskell-mode
   :pre-init
