@@ -159,13 +159,14 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(farmhouse-light
+   dotspacemacs-themes '(farmhouse-dark
+                         farmhouse-light
                          spacemacs-dark)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("M+ 1m" ;; "Source Code Pro"
+   dotspacemacs-default-font '("Source Code Pro" ;;"M+ 1m"
                                :size 13
                                :weight normal
                                :width normal
@@ -401,7 +402,7 @@ you should place your code here."
         (set-frame-parameter (selected-frame) 'horizontal-scroll-bars nil)
         (set-frame-parameter (selected-frame) 'top 10)
         (set-frame-parameter (selected-frame) 'left 6)
-        (set-frame-parameter (selected-frame) 'height 60)
+        (set-frame-parameter (selected-frame) 'height 40)
         (set-frame-parameter (selected-frame) 'width 120)))
      ((string-equal system-type "darwin") ; Mac OS X
       (progn
@@ -474,6 +475,33 @@ you should place your code here."
   (setq tidal-interpreter "stack")
   (setq tidal-interpreter-arguments (list "ghci" "--with-ghc=intero"))
 
+  (defun default-face-attribute ()
+    (interactive)
+    (cond
+     ((string-equal system-type "windows-nt") ; Microsoft Windows
+      (progn
+        (set-face-attribute
+         'default nil
+         :family "Source Code Pro"
+         :height 140
+         :weight 'normal
+         :width 'normal)))
+     ((string-equal system-type "darwin") ; Mac OS X
+      (progn
+        (set-face-attribute
+         'default nil
+         ;; :family "Source Code Pro"
+         :family "M+ 1m"
+         :height 140
+         :weight 'normal
+         :width 'normal)))
+     ((string-equal system-type "gnu/linux") ; linux
+      (progn
+        (message "Linux")))))
+
+  (default-face-attribute)
+
+
   (set-face-attribute
    'default nil
    ;; :family "Source Code Pro"
@@ -518,7 +546,7 @@ This function is called at the very end of Spacemacs initialization."
  '(haskell-indentation-where-post-offset 2)
  '(haskell-indentation-where-pre-offset 2)
  '(hl-paren-background-colors (quote ("#2492db" "#95a5a6" nil)))
- '(hl-paren-colors (quote ("#ecf0f1" "#ecf0f1" "#c0392b")) t)
+ '(hl-paren-colors (quote ("#ecf0f1" "#ecf0f1" "#c0392b")))
  '(ido-auto-merge-delay-time 4)
  '(org-M-RET-may-split-line (quote ((headline . t))))
  '(org-adapt-indentation nil)
@@ -638,6 +666,7 @@ This function is called at the very end of Spacemacs initialization."
  '(org-html-head-include-scripts nil)
  '(org-html-htmlize-output-type (quote css))
  '(org-html-postamble nil)
+ '(org-image-actual-width nil)
  '(org-insert-heading-respect-content nil)
  '(org-latex-to-pdf-process
    (quote
@@ -686,7 +715,7 @@ This function is called at the very end of Spacemacs initialization."
  '(paradox-automatically-star t)
  '(paradox-execute-asynchronously t t)
  '(paradox-github-token "9c0337a9d7ffbfa53d06bf294278dc777a2b77c9")
- '(projectile-known-projects-file "~/.emacs.d/.cache/projectile-bookmarks.eld" t)
+ '(projectile-known-projects-file "~/.emacs.d/.cache/projectile-bookmarks.eld")
  '(reb-re-syntax (quote read))
  '(recentf-save-file "~/.emacs.d/.cache/recentf")
  '(tags-add-tables nil)
@@ -717,9 +746,9 @@ This function is called at the very end of Spacemacs initialization."
          (aref ansi-term-color-vector 0)))))
  '(yas-fallback-behavior (quote call-other-command))
  '(yas-indent-line (quote nothing))
- '(yas-prompt-functions (quote (yas-ido-prompt yas-dropdown-prompt)) t)
- '(yas-triggers-in-field t t)
- '(yas-wrap-around-region t t))
+ '(yas-prompt-functions (quote (yas-ido-prompt yas-dropdown-prompt)))
+ '(yas-triggers-in-field t)
+ '(yas-wrap-around-region t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
