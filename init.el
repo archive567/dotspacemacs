@@ -44,7 +44,7 @@ This function should only modify configuration layer settings."
      haskell-ext
      helm
      html
-     markdown
+     (markdown :variables markdown-live-preview-engine 'vmd)
      org
      org-ext
      osx
