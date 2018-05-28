@@ -29,40 +29,28 @@ This function should only modify configuration layer settings."
    dotspacemacs-configuration-layer-path '()
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(rust
-     yaml
-     ;; ----------------------------------------------------------------
+   '(;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      auto-completion
-     helm
      emacs-lisp
      git
-     ;; github
      (haskell
       :variables
-      haskell-completion-backend 'intero
+      haskell-completion-backend 'dante
       )
      haskell-ext
+     helm
      html
-     idris
-     ipython-notebook
      markdown
      org
      org-ext
-     (osx
-      :variables
-      ;;osx-command-as 'meta
-      ;;osx-control-as 'hyper)
-      )
-     (shell :variables
-             shell-default-height 30
-             shell-default-position 'bottom)
-     ;; spell-checking
-     themes-megapack
+     osx
+     (spell-checking :variables spell-checking-enable-by-default nil)
      syntax-checking
+     themes-megapack
      version-control
      yaml
      )
@@ -72,14 +60,12 @@ This function should only modify configuration layer settings."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages
    '(
-     intero
      (tidal :location (recipe :fetcher github :repo "tonyday567/Tidal"))
     )
 
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages
    '(
-     dante
      gnus
      ox-pandoc
      helm-flycheck
@@ -509,6 +495,9 @@ you should place your code here."
    :height 140
    :weight 'normal
    :width 'normal)
+
+  
+  (spacemacs/toggle-spelling-checking-off)
 
   ;; fixme
   (setenv "PATH"

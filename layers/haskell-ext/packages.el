@@ -1,7 +1,7 @@
 (defconst haskell-ext-packages
   '())
 
-(spacemacs|use-package-add-hook intero
+(spacemacs|use-package-add-hook dante
   :pre-init
   ;; Code
   :post-init
@@ -10,7 +10,7 @@
   ;; Code
   :post-config
   ;; Code
-  (flycheck-add-next-checker 'intero '(warning . haskell-hlint)))
+  (flycheck-add-next-checker 'haskell-dante '(warning . haskell-hlint)))
 
 (spacemacs|use-package-add-hook haskell-mode
   :pre-init
@@ -22,26 +22,6 @@
   :post-config
   ;; Code
   (progn
-    (dolist (mode haskell-modes)
-      (spacemacs/declare-prefix-for-mode mode "mr" "haskell/refactor")
-      (spacemacs/declare-prefix-for-mode mode "mx" "haskell/flycheck")
-      (spacemacs/declare-prefix-for-mode mode "mri" "haskell/refactor/imports")
-      (evil-leader/set-key-for-mode mode
-        "xc" 'flycheck-haskell-configure
-        "xb" 'flycheck-buffer
-        "xv" 'flycheck-verify-setup
-        "xt" 'flycheck-mode
-        "xs" 'flycheck-select-checker
-        "xn" 'flycheck-next-error
-        "xp" 'flycheck-previous-error
-        "ria" 'haskell-align-imports
-        "rin" 'haskell-navigate-imports
-        "ris" 'haskell-sort-imports
-        "rd" 'hindent/reformat-decl))
-    (when (bound-and-true-p interactive-haskell-mode)
-      (when (fboundp 'interactive-haskell-mode)
-        (message "Disabling interactive-haskell-mode ...")
-        (interactive-haskell-mode -1)))
     (add-hook 'haskell-mode-hook
               (lambda()
                 (setq mode-name "hs")))
