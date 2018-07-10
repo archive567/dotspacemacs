@@ -39,11 +39,14 @@ This function should only modify configuration layer settings."
      git
      (haskell
       :variables
-      haskell-completion-backend 'dante
+      ;;haskell-completion-backend 'dante
+      haskell-completion-backend 'ghci
+      haskell-process-type 'stack-ghci
       )
-     haskell-ext
+     ;; haskell-ext
      helm
      html
+     lsp
      (markdown :variables markdown-live-preview-engine 'vmd)
      org
      org-ext
@@ -61,6 +64,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-additional-packages
    '(
      (tidal :location (recipe :fetcher github :repo "tonyday567/Tidal"))
+     lsp-haskell
     )
 
    ;; A list of packages and/or extensions that will not be install and loaded.
@@ -505,7 +509,10 @@ you should place your code here."
   (setenv "PATH"
           (concat
            (getenv "PATH")
-           ";C:\\Users\\ajdayz\\AppData\\Local\\Programs\\Git\\usr\\bin")))
+           ";C:\\Users\\ajdayz\\AppData\\Local\\Programs\\Git\\usr\\bin"))
+
+  (require 'lsp-haskell)
+  (add-hook 'haskell-mode-hook #'lsp-haskell-enable))
 
 (defun dotspacemacs/emacs-custom-settings ()
   "Emacs custom settings.
