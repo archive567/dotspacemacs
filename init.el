@@ -46,7 +46,6 @@ This function should only modify configuration layer settings."
      ;; haskell-ext
      helm
      html
-     ;; lsp-mode
      (markdown :variables markdown-live-preview-engine 'vmd)
      org
      org-ext
@@ -64,7 +63,6 @@ This function should only modify configuration layer settings."
    dotspacemacs-additional-packages
    '(
      (tidal :location (recipe :fetcher github :repo "tonyday567/Tidal"))
-     lsp-haskell
     )
 
    ;; A list of packages and/or extensions that will not be install and loaded.
@@ -510,9 +508,7 @@ you should place your code here."
           (concat
            (getenv "PATH")
            ";C:\\Users\\ajdayz\\AppData\\Local\\Programs\\Git\\usr\\bin"))
-
-  (require 'lsp-haskell)
-  (add-hook 'haskell-mode-hook #'lsp-haskell-enable))
+  )
 
 (defun dotspacemacs/emacs-custom-settings ()
   "Emacs custom settings.
@@ -578,7 +574,7 @@ This function is called at the very end of Spacemacs initialization."
  '(org-agenda-dim-blocked-tasks nil)
  '(org-agenda-files
    (quote
-    ("~/org/strategy.org" "~/org/econ.org" "~/org/cat.org" "~/org/nsteel.org" "~/org/haskell.org" "~/org/sys.org" "~/org/stuff.org" "~/org/refile.org" "~/org/life.org" "~/org/emacs.org" "~/org/bugz.org")))
+    ("~/org/daa.org" "~/org/funding.org" "~/org/strategy.org" "~/org/econ.org" "~/org/cat.org" "~/org/haskell.org" "~/org/sys.org" "~/org/stuff.org" "~/org/refile.org" "~/org/life.org" "~/org/emacs.org" "~/org/bugz.org")))
  '(org-agenda-include-diary nil)
  '(org-agenda-ndays 1)
  '(org-agenda-persistent-filter t)
