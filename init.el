@@ -55,6 +55,7 @@ This function should only modify configuration layer settings."
      themes-megapack
      version-control
      yaml
+     search-engine
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -399,10 +400,10 @@ you should place your code here."
         (set-frame-parameter (selected-frame) 'fullscreen nil)
         (set-frame-parameter (selected-frame) 'vertical-scroll-bars nil)
         (set-frame-parameter (selected-frame) 'horizontal-scroll-bars nil)
-        (set-frame-parameter (selected-frame) 'top 20)
-        (set-frame-parameter (selected-frame) 'left 1)
-        (set-frame-parameter (selected-frame) 'height 47)
-        (set-frame-parameter (selected-frame) 'width 85)))
+        (set-frame-parameter (selected-frame) 'top 30)
+        (set-frame-parameter (selected-frame) 'left 11)
+        (set-frame-parameter (selected-frame) 'height 49)
+        (set-frame-parameter (selected-frame) 'width 100)))
      ((string-equal system-type "gnu/linux") ; linux
       (progn
         (message "Linux")))))
@@ -459,6 +460,7 @@ you should place your code here."
         (min-frame)
       (max-frame)))
 
+  (print "default-frame is here")
   (default-frame)
 
   (setenv "TIDAL_TEMPO_PORT" "9160")
