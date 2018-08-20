@@ -2,37 +2,23 @@
 
 - minor tweaks to org and haskell
 - windows and osx
+- some workarounds for external packages
 
 * setup from scratch
 
-** refresh spacemacs
-
 #+begin_src ssh
+cd ~
 git clone https://github.com/syl20bnr/spacemacs
-cd spacemacs
+rn spacemacs .emacs.d
+cd .emacs.d
 git checkout develop
-ln -s ../dotspacemacs/.cache
-ln -s ../dotspacemacs/elpa
-cd ..
-ln -s dotspacemacs ~/.spacemacs.d
-ln -s spacemacs ~/.emacs.d
-#+end_src
 
-
-
-** new dotspacemacs
-
-#+begin_src ssh
-mkdir dotspacemacs
-cp spacemacs/.spacemacs dotspacemacs/init.el
-cp spacemacs/elpa dotspacemacs/elpa
-cp spacemacs/.cache dotspacemacs/.cache
+cd ~
+git clone https://github.com/tonyday567/dotspacemacs
+rn dotspacemacs .spacemacs.d
 #+end_src
 
 ** windows
-
-symbolic links were are hard.  
-Instead, renamed spacemacs to .emacs.d, and dotspacemacs to .spacemacs.d
 
 added the following execs to the path:
 - ag

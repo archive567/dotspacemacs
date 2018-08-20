@@ -1,7 +1,7 @@
 (defconst haskell-ext-packages
   '())
 
-(spacemacs|use-package-add-hook dante
+(spacemacs|use-package-add-hook intero
   :pre-init
   ;; Code
   :post-init
@@ -10,7 +10,10 @@
   ;; Code
   :post-config
   ;; Code
-  (flycheck-add-next-checker 'haskell-dante '(warning . haskell-hlint)))
+  (progn
+    (flycheck-add-next-checker 'intero '(warning . haskell-hlint))
+    (bind-key* "M-n" 'flycheck-next-error)
+    (bind-key* "M-p" 'flycheck-previous-error)))
 
 (spacemacs|use-package-add-hook haskell-mode
   :pre-init
@@ -22,6 +25,7 @@
   :post-config
   ;; Code
   (progn
+    (spacemacs/enable-flycheck 'literate-haskell-mode)
     (add-hook 'haskell-mode-hook
               (lambda()
                 (setq mode-name "hs")))
