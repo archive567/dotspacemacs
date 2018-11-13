@@ -2,7 +2,6 @@
   '())
 
 (defun ess/post-init-ess ()
-  (message "post-init-ess")
   (add-hook 'R-mode-hook 'flycheck-mode)
   (add-hook 'ess-mode-hook
             (lambda()

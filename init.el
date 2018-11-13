@@ -446,8 +446,6 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
-  (bind-key* "M-n" 'flycheck-next-error)
-  (bind-key* "M-p" 'flycheck-previous-error)
   ;; default-frame doesn't work here because there is not yet a selected-frame
   (setq initial-frame-alist '((top . 30) (left . 11) (width . 100) (height . 49)))
 
