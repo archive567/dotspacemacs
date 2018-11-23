@@ -66,6 +66,7 @@ This function should only modify configuration layer settings."
      org
      org-ext
      osx
+     polymode
      r-ext
      (spell-checking :variables spell-checking-enable-by-default nil)
      style-ext
@@ -82,7 +83,10 @@ This function should only modify configuration layer settings."
    ;; To use a local version of a package, use the `:location' property:
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages
+   '(
+     poly-markdown
+     poly-R)
 
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages

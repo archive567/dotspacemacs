@@ -272,6 +272,8 @@ This function is called at the very end of Spacemacs initialization."
  '(hl-paren-colors (quote ("#ecf0f1" "#ecf0f1" "#c0392b")))
  '(ido-auto-merge-delay-time 4)
  '(lsp-response-timeout 120)
+ '(markdown-command
+   "pandoc --from markdown -t html --mathjax --highlight-style pygments --standalone")
  '(org-M-RET-may-split-line (quote ((headline . t))))
  '(org-adapt-indentation nil)
  '(org-agenda-compact-blocks t)
