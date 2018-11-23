@@ -49,7 +49,8 @@ This function should only modify configuration layer settings."
       ess-offset-arguments-newline 'prev-line
       ess-offset-arguments 'prev-line
       ess-indent-offset 2
-      ess-disable-underscore-assign t)
+      ess-disable-underscore-assign t
+      ess-ask-for-ess-directory nil)
      git
      (haskell
       :variables
