@@ -43,6 +43,6 @@
             ".html")))
       (with-temp-buffer
         (insert-file-contents file-name-md)
-        (set-visited-file-name file-name-html t)
-        (browse-url-of-file (markdown-export))))))
+        (set-visited-file-name file-name-md t)
+        (browse-url-of-file (markdown-export file-name-html))))))
 
