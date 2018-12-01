@@ -257,7 +257,7 @@ This function is called at the very end of Spacemacs initialization."
  '(flycheck-display-errors-function (quote flycheck-display-error-messages))
  '(flycheck-hlintrc nil)
  '(flycheck-lintr-linters
-   "with_defaults(camel_case_linter = NULL, snake_case_linter, object_usage_linter = NULL)")
+   "with_defaults(object_usage_linter = NULL, object_name_linter = NULL, snake_case_linter = NULL, camel_case_linter = NULL)")
  '(flycheck-pos-tip-mode nil)
  '(haskell-font-lock-symbols t)
  '(haskell-hayoo-url "http://hayoo.fh-wedel.de/?query=%s")
