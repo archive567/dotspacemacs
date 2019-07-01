@@ -33,7 +33,7 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(rust
+   '(
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -63,11 +63,13 @@ This function should only modify configuration layer settings."
      html
      (markdown :variables markdown-live-preview-engine 'vmd)
      ;; multiple-cursors
+     javascript
      neotree
      org
      org-ext
      osx
      polymode
+     python
      r-ext
      (spell-checking :variables spell-checking-enable-by-default nil)
      style-ext
@@ -453,7 +455,9 @@ before packages are loaded."
 
   ;; default-frame doesn't work here because there is not yet a selected-frame
   (setq initial-frame-alist '((top . 30) (left . 11) (width . 100) (height . 49)))
-
+  (setq header-line-format " ")
+  (setq left-margin-width 2)
+  (setq right-margin-width 2)
   (spacemacs/toggle-spelling-checking-off)
 
   (cond

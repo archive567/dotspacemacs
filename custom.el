@@ -32,6 +32,15 @@ This function is called at the very end of Spacemacs initialization."
  '(hl-paren-colors (quote ("#ecf0f1" "#ecf0f1" "#c0392b")))
  '(ido-auto-merge-delay-time 4)
  '(lsp-response-timeout 120)
+ '(org-startup-indented t)
+ '(org-bullets-bullet-list '(" "))
+ '(org-ellipsis " □ ")
+ '(org-pretty-entities t)
+ '(org-hide-emphasis-markers t)
+ '(org-agenda-block-separator "")
+ '(org-fontify-whole-heading-line t)
+ '(org-fontify-done-headline t)
+ '(org-fontify-quote-and-verse-blocks t)
  '(org-M-RET-may-split-line (quote ((headline . t))))
  '(org-adapt-indentation nil)
  '(org-agenda-compact-blocks t)
@@ -253,7 +262,9 @@ This function is called at the very end of Spacemacs initialization."
     ("e8825f26af32403c5ad8bc983f8610a4a4786eb55e3a363fa9acb48e0677fe7e" default)))
  '(dired-auto-revert-buffer t)
  '(ess-default-style (quote DEFAULT))
+ '(ess-style (quote DEFAULT))
  '(evil-escape-key-sequence "jk")
+ '(evil-want-Y-yank-to-eol nil)
  '(flycheck-display-errors-function (quote flycheck-display-error-messages))
  '(flycheck-hlintrc nil)
  '(flycheck-lintr-linters
@@ -271,11 +282,13 @@ This function is called at the very end of Spacemacs initialization."
  '(hl-paren-background-colors (quote ("#2492db" "#95a5a6" nil)))
  '(hl-paren-colors (quote ("#ecf0f1" "#ecf0f1" "#c0392b")))
  '(ido-auto-merge-delay-time 4)
+ '(line-spacing 0.1)
  '(lsp-response-timeout 120)
  '(markdown-command
    "pandoc --from markdown -t html --mathjax --highlight-style pygments --standalone")
  '(org-M-RET-may-split-line (quote ((headline . t))))
  '(org-adapt-indentation nil)
+ '(org-agenda-block-separator "")
  '(org-agenda-compact-blocks t)
  '(org-agenda-custom-commands
    (quote
@@ -305,7 +318,7 @@ This function is called at the very end of Spacemacs initialization."
  '(org-agenda-dim-blocked-tasks nil)
  '(org-agenda-files
    (quote
-    ("~/org/strategy.org" "~/org/econ.org" "~/org/cat.org" "~/org/haskell.org" "~/org/sys.org" "~/org/stuff.org" "~/org/refile.org" "~/org/life.org" "~/org/emacs.org" "~/org/bugz.org")))
+    ("~/org/culture.org" "~/org/strategy.org" "~/org/econ.org" "~/org/cat.org" "~/org/haskell.org" "~/org/sys.org" "~/org/stuff.org" "~/org/refile.org" "~/org/life.org" "~/org/emacs.org" "~/org/bugz.org")))
  '(org-agenda-include-diary nil)
  '(org-agenda-ndays 1)
  '(org-agenda-persistent-filter t)
@@ -338,6 +351,7 @@ This function is called at the very end of Spacemacs initialization."
      (js . t)
      (haskell \.t))))
  '(org-babel-results-keyword "results")
+ '(org-bullets-bullet-list (quote (" ")))
  '(org-capture-bookmark nil)
  '(org-capture-templates
    (quote
@@ -360,6 +374,7 @@ This function is called at the very end of Spacemacs initialization."
  '(org-cycle-separator-lines 0)
  '(org-deadline-warning-days 5)
  '(org-edit-src-content-indentation 0)
+ '(org-ellipsis " □ ")
  '(org-enable-priority-commands nil)
  '(org-enforce-todo-dependencies t)
  '(org-entities-user
@@ -384,8 +399,12 @@ This function is called at the very end of Spacemacs initialization."
  '(org-export-with-tags nil)
  '(org-export-with-timestamps nil)
  '(org-fast-tag-selection-single-key (quote expert))
+ '(org-fontify-done-headline t)
+ '(org-fontify-quote-and-verse-blocks t)
+ '(org-fontify-whole-heading-line t)
  '(org-footnote-section nil)
  '(org-from-is-user-regexp "\\<tony day\\>")
+ '(org-hide-emphasis-markers t)
  '(org-hide-leading-stars nil)
  '(org-html-head-include-default-style nil)
  '(org-html-head-include-scripts nil)
@@ -401,6 +420,7 @@ This function is called at the very end of Spacemacs initialization."
  '(org-log-into-drawer "LOGBOOK")
  '(org-modules (quote (org-id org-info)))
  '(org-outline-path-complete-in-steps nil)
+ '(org-pretty-entities t)
  '(org-provide-todo-statistics nil)
  '(org-refile-allow-creating-parent-nodes (quote confirm))
  '(org-refile-target-verify-function nil)
@@ -446,7 +466,8 @@ This function is called at the very end of Spacemacs initialization."
  '(recentf-save-file "~/.emacs.d/.cache/recentf")
  '(safe-local-variable-values
    (quote
-    ((intero-targets "numhask-hedgehog:lib" "numhask-hedgehog:test:test")
+    ((intero-targets "web-page:lib" "web-page:exe:page-example" "web-page:test:test")
+     (intero-targets "numhask-hedgehog:lib" "numhask-hedgehog:test:test")
      (intero-stack-yaml . "/Users/tonyday/haskell/numhask/stack.yaml"))))
  '(tags-add-tables nil)
  '(tramp-persistency-file-name "~/.emacs.d/.cache/tramp" t)
