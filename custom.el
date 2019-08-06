@@ -318,7 +318,7 @@ This function is called at the very end of Spacemacs initialization."
  '(org-agenda-dim-blocked-tasks nil)
  '(org-agenda-files
    (quote
-    ("~/org/culture.org" "~/org/strategy.org" "~/org/econ.org" "~/org/cat.org" "~/org/haskell.org" "~/org/sys.org" "~/org/stuff.org" "~/org/refile.org" "~/org/life.org" "~/org/emacs.org" "~/org/bugz.org")))
+    ("~/org/strategy.org" "~/org/econ.org" "~/org/cat.org" "~/org/haskell.org" "~/org/sys.org" "~/org/stuff.org" "~/org/refile.org" "~/org/life.org" "~/org/emacs.org" "~/org/bugz.org")))
  '(org-agenda-include-diary nil)
  '(org-agenda-ndays 1)
  '(org-agenda-persistent-filter t)
@@ -461,14 +461,10 @@ This function is called at the very end of Spacemacs initialization."
  '(paradox-automatically-star t)
  '(paradox-execute-asynchronously t t)
  '(paradox-github-token "9c0337a9d7ffbfa53d06bf294278dc777a2b77c9")
+ '(powerline-default-separator (quote arrow))
  '(projectile-known-projects-file "~/.emacs.d/.cache/projectile-bookmarks.eld")
  '(reb-re-syntax (quote read))
  '(recentf-save-file "~/.emacs.d/.cache/recentf")
- '(safe-local-variable-values
-   (quote
-    ((intero-targets "web-page:lib" "web-page:exe:page-example" "web-page:test:test")
-     (intero-targets "numhask-hedgehog:lib" "numhask-hedgehog:test:test")
-     (intero-stack-yaml . "/Users/tonyday/haskell/numhask/stack.yaml"))))
  '(tags-add-tables nil)
  '(tramp-persistency-file-name "~/.emacs.d/.cache/tramp" t)
  '(vc-annotate-background "#ecf0f1")
