@@ -41,7 +41,6 @@ This function should only modify configuration layer settings."
      ;; ----------------------------------------------------------------
      auto-completion
      better-defaults
-     brittany
      emacs-lisp
      erc
      (ess
@@ -56,33 +55,6 @@ This function should only modify configuration layer settings."
       :variables
         haskell-completion-backend 'intero
         haskell-process-type 'stack-ghci
-        intero-whitelist
-        '(
-          "~/haskell/box"
-          "~/haskell/chart-svg"
-          "~/haskell/fmeme"
-          "~/haskell/numhask"
-          "~/haskell/numhask-backprop"
-          "~/haskell/numhask-bench"
-          "~/haskell/numhask-graph"
-          "~/haskell/online"
-          "~/haskell/online-backprop"
-          "~/haskell/online-market"
-          "~/haskell/online-random"
-          "~/haskell/perf"
-          "~/haskell/readme-lhs"
-          "~/haskell/sao"
-          "~/haskell/sfold"
-          "~/haskell/tonyday567.github.io"
-          "~/haskell/web-rep"
-          "~/haskell/xlsx"
-          )
-        intero-blacklist
-        '(
-          "/"
-          )
-        intero-global-mode t
-      ;; haskell-process-type 'ghci
      )
      haskell-ext
      helm
@@ -92,6 +64,7 @@ This function should only modify configuration layer settings."
      javascript
      org
      org-ext
+     ormolu
      osx
      polymode
      python
