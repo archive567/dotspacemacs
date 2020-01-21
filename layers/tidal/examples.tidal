@@ -1,4 +1,4 @@
--- tidal-start-haskell
+-- C-c C-s tidal-start-haskell
 -- C-c C-c to run a line
 -- C-c C-e to run a region
 
@@ -9,8 +9,63 @@ d1 silence
 -- could usefully make <> and be done wth it
 -- these combinators seem to be like zip with respect to params, dropping excess pattern elements
 
+hush 
+silence d1
+
+d1 $ rarely (# speed 1.5) $ jux (rev)$ sometimes (# speed 2) $ every 2 (density 2) $ every 5 (density 1.25)$ degradeBy 0.1 $ s "click*20" # n (irand 8) -- INSECTS
+  # lpf (rand*2000)
+  # lpq 0.3
+  # pan (square)
+  # delay 0.6
+  # delaytime 0.4
+  # delayfeedback 0.15
+
+  
+
+d2 $ s "tbd:9*4" -- TECHNO Punch
+  # hpf 100
+
+d3 $ s "tbd:6*4" -- TECHNO Rumble
+  # delay 1
+  # delaytime 0.3
+  # delayfeedback 0.16
+  # cutoff 80
+
+d4 -- broken snare reverb disaster
+  $ smash 3 [2, 3, 4]
+  $ s "[~ tsn:7]*2"
+  # room 2500
+  # hpf 900
+
+hush
+
+d1 $ slow 2 $ sound "bd bd bd bd bd bd [bd*4] [bd*4]"
+
+d1 $ sound "hh*16"
+
+d2 $ s "bd*8"
+
+hush
+
 d1 $ sound "drum drum" # speed "0.6 0.4 0.8 0.6"
-d1 $ s' "drum drum" # n "0 1" # speed "0.6 0.4"
+d1 $ s "drum drum [bd*2] [bd ~] [drum*4]" # n "0 1 2 1" # speed "0.6 0.4 0.4 0.1"
+d1 $ every 4 (fast 2 . rev) $ crush "4" $ sound "bd:5*8" # speed sine # pan sine
+d3 $ s "[cp cp] [cp ~] [cp cp] [~ cp] [~ cp] [cp ~]"
+
+d2 $ fast 2 $ s "[cp cp] [cp ~] [cp cp] [~ cp] [~ cp] [cp ~]"
+  # vowel "a e i u"
+  # resonance "0.7"
+  # lbrick "0.1 0.4 0.8"
+
+d1 $ speed 0.25 $ s "sitar"
+  
+
+
+...
+
+d1 silence
+d2 silence
+d3 silence
 
 d2 $ sound "voodoo:6 drum:2 drum:1 [~ voodoo:6]" |+|
      speed "0.3 0.2 0.4 0.3" |+|
