@@ -72,7 +72,7 @@ This function is called at the very end of Spacemacs initialization."
  '(org-agenda-dim-blocked-tasks nil)
  '(org-agenda-files
    (quote
-    ("~/org/strategy.org" "~/org/econ.org" "~/org/cat.org" "~/org/haskell.org" "~/org/sys.org" "~/org/stuff.org" "~/org/refile.org" "~/org/life.org" "~/org/emacs.org" "~/org/bugz.org")))
+    ("~/org/case.org" "~/org/climate.org" "~/org/culture.org" "~/org/econ.org" "~/org/haskell.org" "~/org/sys.org" "~/org/stuff.org" "~/org/refile.org" "~/org/life.org" "~/org/emacs.org" "~/org/bugz.org" "~/org/links.org" "~/org/trade.org" "~/org/venn.org")))
  '(org-agenda-include-diary nil)
  '(org-agenda-ndays 1)
  '(org-agenda-persistent-filter t)
@@ -319,7 +319,7 @@ This function is called at the very end of Spacemacs initialization."
  '(org-agenda-dim-blocked-tasks nil)
  '(org-agenda-files
    (quote
-    ("~/org/links.org" "~/org/draft.org" "~/org/econ.org" "~/org/haskell.org" "~/org/sys.org" "~/org/stuff.org" "~/org/refile.org" "~/org/life.org" "~/org/emacs.org" "~/org/bugz.org")))
+    ("~/org/econ.org" "~/org/cat.org" "~/org/haskell.org" "~/org/sys.org" "~/org/stuff.org" "~/org/refile.org" "~/org/life.org" "~/org/emacs.org" "~/org/bugz.org" "~/org/case.org" "~/org/climate.org" "~/org/culture.org" "~/org/links.org" "~/org/trade.org" "~/org/venn.org")))
  '(org-agenda-include-diary nil)
  '(org-agenda-ndays 1)
  '(org-agenda-persistent-filter t)
