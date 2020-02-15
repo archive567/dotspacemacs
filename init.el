@@ -32,7 +32,8 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(csv
+   '(sql
+     csv
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -52,8 +53,9 @@ This function should only modify configuration layer settings."
      git
      (haskell
       :variables
-        haskell-completion-backend 'intero
+        haskell-completion-backend 'dante
         haskell-process-type 'stack-ghci
+        haskell-process-suggest-remove-import-lines nil
      )
      haskell-ext
      helm
