@@ -60,3 +60,18 @@
           (when (outline-invisible-p)
             (show-entry))               ; display invisible text
           (run-hooks 'org-agenda-after-show-hook))))))
+
+(defun org-cliplink-multi ()
+  (require 'org-cliplink)
+  (interactive)
+  (mapcar (lambda (x)
+            (org-cliplink-insert-transformed-title x 'org-cliplink-org-mode-link-transformer-nl))
+          (org-split-string (org-cliplink-clipboard-content))))
+
+(defun org-cliplink-org-mode-link-transformer-nl (url title)
+  (if title
+      (format "[[%s][%s]]\n" url (org-cliplink-elide-string
+                                (org-cliplink-escape-html4
+                                 (org-cliplink-title-for-url url title))
+                                org-cliplink-max-length))
+    (format "[[%s]]\n" url)))

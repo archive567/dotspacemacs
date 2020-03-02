@@ -32,8 +32,7 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(sql
-     csv
+   '(
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -41,15 +40,14 @@ This function should only modify configuration layer settings."
      ;; ----------------------------------------------------------------
      auto-completion
      better-defaults
+     (bibtex
+      :variables
+      org-ref-default-bibliography '("~/org/Papers/references.bib")
+      org-ref-pdf-directory "~/org/Papers/"
+      org-ref-bibliography-notes "~/org/Papers/notes.org")
+     csv
      emacs-lisp
      erc
-     (ess
-      :variables
-      ess-offset-arguments-newline 'prev-line
-      ess-offset-arguments 'prev-line
-      ess-indent-offset 2
-      ess-disable-underscore-assign t
-      ess-ask-for-ess-directory nil)
      git
      (haskell
       :variables
@@ -61,10 +59,11 @@ This function should only modify configuration layer settings."
      helm
      html
      (markdown :variables markdown-live-preview-engine 'vmd)
-     ;; multiple-cursors
+     multiple-cursors
      javascript
      org
      org-ext
+     org-roam
      ormolu
      osx
      polymode
@@ -77,6 +76,12 @@ This function should only modify configuration layer settings."
      tidal
      version-control
      yaml
+     (deft
+       :variables
+       deft-directory "~/org"
+       deft-extensions '("org" "txt" "md")
+       deft-recursive t
+       )
      )
 
    ;; List of additional packages that will be installed without being
@@ -86,10 +91,13 @@ This function should only modify configuration layer settings."
    ;; To use a local version of a package, use the `:location' property:
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages
-   '(
-     poly-markdown
-     poly-R)
+   dotspacemacs-additional-packages '()
+
+   ;; A list of packages that cannot be updated.
+   dotspacemacs-frozen-packages '()
+
+   ;; A list of packages that cannot be updated.
+   dotspacemacs-frozen-packages '()
 
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages
@@ -104,11 +112,6 @@ This function should only modify configuration layer settings."
      ggtags
      haskell-snippets
      )
-   ;; A list of packages that cannot be updated.
-   dotspacemacs-frozen-packages '()
-
-   ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '()
 
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
@@ -117,7 +120,7 @@ This function should only modify configuration layer settings."
    ;; installs only the used packages but won't delete unused ones. `all'
    ;; installs *all* packages supported by Spacemacs and never uninstalls them.
    ;; (default is `used-only')
-   dotspacemacs-install-packages 'used-only))
+   dotspacemacs-install-packages 'used-but-keep-unused))
 
 (defun dotspacemacs/init ()
   "Initialization:
@@ -190,7 +193,12 @@ It should only modify the values of Spacemacs settings."
    ;; with `:variables' keyword (similar to layers). Check the editing styles
    ;; section of the documentation for details on available variables.
    ;; (default 'vim)
-   dotspacemacs-editing-style 'vim
+   dotspacemacs-editing-style 'hybrid
+
+   ;; If non-nil show the version string in the Spacemacs buffer. It will
+   ;; appear as (spacemacs version)@(emacs version)
+   ;; (default t)
+   dotspacemacs-startup-buffer-show-version nil
 
    ;; Specify the startup banner. Default value is `official', it displays
    ;; the official spacemacs logo. An integer value is the index of text
@@ -205,8 +213,9 @@ It should only modify the values of Spacemacs settings."
    ;; `recents' `bookmarks' `projects' `agenda' `todos'.
    ;; List sizes may be nil, in which case
    ;; `spacemacs-buffer-startup-lists-length' takes effect.
-   dotspacemacs-startup-lists '((projects . 10) agenda (recents . 5))
-   ;; True if the home buffer should respond to resize events.
+   dotspacemacs-startup-lists '((projects . 5) (recents . 5))
+
+   ;; True if the home buffer should respond to resize events. (default t)
    dotspacemacs-startup-buffer-responsive t
 
    ;; Default major mode for a new empty buffer. Possible values are mode
@@ -239,13 +248,13 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    ;; (default t)
    dotspacemacs-colorize-cursor-according-to-state t
-   ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
-   ;; quickly tweak the mode-line size to make separators look not too crappy.
+
+   ;; Default font or prioritized list of fonts.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
+                               :size 13.0
                                :weight normal
-                               :width normal
-                               :powerline-scale 1.1)
+                               :width normal)
+
    ;; The leader key (default "SPC")
    dotspacemacs-leader-key "SPC"
 
@@ -510,13 +519,6 @@ before packages are loaded."
   (setq header-line-format " ")
   (setq left-margin-width 2)
   (setq right-margin-width 2)
-  (spacemacs/toggle-spelling-checking-off)
-
-  (cond
-   ((string-equal system-type "windows-nt") ; Microsoft Windows
-    (setenv "PATH"
-            (concat
-             (getenv "PATH")
-             ";C:\\Users\\ajdayz\\AppData\\Local\\Programs\\Git\\usr\\bin")))))
+  (spacemacs/toggle-spelling-checking-off))
 
 

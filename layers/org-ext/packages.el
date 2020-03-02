@@ -14,8 +14,10 @@
        '((emacs-lisp . t)
          ))
       (evil-leader/set-key-for-mode 'org-mode
-        "r" 'org-ext-random-entry)
+        "R" 'org-ext-random-entry)
+      (evil-leader/set-key-for-mode 'org-mode
+        "im" 'org-cliplink-multi)
       (evil-leader/set-key-for-mode 'org-agenda-mode
-        "r" 'org-ext-random-entry)
+        "R" 'org-ext-random-entry)
       (setq org-link-types '("http" "https" "ftp" "mailto" "file" "news"
                              "elisp" "doi" "message")))))
