@@ -51,20 +51,24 @@ This function should only modify configuration layer settings."
      git
      (haskell
       :variables
-        haskell-completion-backend 'dante
-        haskell-process-type 'stack-ghci
-        haskell-process-suggest-remove-import-lines nil
-     )
+      haskell-completion-backend 'dante
+      haskell-process-type 'stack-ghci
+      haskell-process-suggest-remove-import-lines nil
+      )
      haskell-ext
      helm
      html
      (markdown :variables markdown-live-preview-engine 'vmd)
      multiple-cursors
      javascript
-     org
-     org-ext
+     (org
+      :variables
+      org-enable-hugo-support t)
+     (org-ext
+      :variables
+      org-ext-hugo-export-on-save t
+      )
      org-roam
-     ormolu
      osx
      polymode
      python

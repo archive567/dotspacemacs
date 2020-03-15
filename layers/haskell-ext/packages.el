@@ -1,5 +1,15 @@
 (defconst haskell-ext-packages
-  '())
+  '(ormolu))
+
+(defun haskell-ext/init-ormolu ()
+  (use-package ormolu
+    :defer t
+    :init
+    (progn
+      (spacemacs/set-leader-keys-for-major-mode 'haskell-mode
+        "ro" 'ormolu-format-buffer
+        "rO" 'ormolu-format-region
+        "ru" 'ormolu-unline-fragment))))
 
 (spacemacs|use-package-add-hook dante
   :pre-init
@@ -42,3 +52,24 @@
     (add-hook 'literate-haskell-mode-hook
               (lambda()
                 (setq-local mode-line-process nil)))))
+
+(defun ormolu-unline-fragment ()
+  "Replace newlines and indentation with one space to the next indentation level"
+  (interactive)
+  (save-excursion
+    (back-to-indentation)
+    (let ((scol (current-column)))
+      (while
+          (progn
+            (re-search-forward "\n\\s-*")
+            (when (> (current-column) scol)
+              (replace-match " "))
+            (> (current-column) scol)
+            )
+        )
+      )
+    )
+  )
+
+
+

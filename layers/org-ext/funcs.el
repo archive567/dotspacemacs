@@ -75,3 +75,4 @@
                                  (org-cliplink-title-for-url url title))
                                 org-cliplink-max-length))
     (format "[[%s]]\n" url)))
+
