@@ -2,6 +2,22 @@
 -- C-c C-c to run a line
 -- C-c C-e to run a region
 
+
+d1
+  -- $ density 1
+  $ s "hh*64" -- Mess with number of samples,, up to audio rate (starts at like 100)
+  # lpf "[500, 1000, 5000, 25000, 100000]"
+  -- # lpq "0.9" -- Filter resonance
+  # pan (stitch "[t f]*4" (range 0 0.5 tri) (range 0.5 1 tri))
+
+d1
+  $ density 1
+  $ s "sn*100" -- Mess with number of samples,, up to audio rate (starts at like 100)
+  # lpf "[50, 100, 500, 1500, 10000]"
+  # lpq "0.7" -- Filter resonance
+  # pan (stitch "[t f]*5" (range 0 0.5 saw) (range 1 0.5 saw))
+  # gain "0.8"
+
 hush
 d1 silence
 

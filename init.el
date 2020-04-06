@@ -32,8 +32,7 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(
-     ;; ----------------------------------------------------------------
+   '(;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
@@ -51,13 +50,14 @@ This function should only modify configuration layer settings."
      git
      (haskell
       :variables
-      haskell-completion-backend 'dante
-      haskell-process-type 'stack-ghci
+      haskell-completion-backend 'lsp
       haskell-process-suggest-remove-import-lines nil
+      lsp-haskell-process-path-hie "hie-wrapper"
       )
      haskell-ext
      helm
      html
+     lsp
      (markdown :variables markdown-live-preview-engine 'vmd)
      multiple-cursors
      javascript

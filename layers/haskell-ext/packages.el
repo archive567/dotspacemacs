@@ -11,20 +11,6 @@
         "rO" 'ormolu-format-region
         "ru" 'ormolu-unline-fragment))))
 
-(spacemacs|use-package-add-hook dante
-  :pre-init
-  ;; Code
-  :post-init
-  ;; Code
-  :pre-config
-  ;; Code
-  :post-config
-  ;; Code
-  (progn
-    (flycheck-add-next-checker 'haskell-dante '(warning . haskell-hlint))
-    (bind-key* "M-n" 'flycheck-next-error)
-    (bind-key* "M-p" 'flycheck-previous-error)))
-
 (spacemacs|use-package-add-hook haskell-mode
   :pre-init
   ;; Code
