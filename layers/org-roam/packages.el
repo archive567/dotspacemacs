@@ -13,6 +13,7 @@
         "ri" 'org-roam-insert
         "rg" 'org-roam-show-graph
         )
+      (spacemacs|diminish org-roam-mode " ⓡ" " r")
       )
     :hook
     ((org-mode . org-roam-mode)

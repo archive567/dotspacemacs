@@ -37,7 +37,10 @@
                 (setq mode-name "lhs")))
     (add-hook 'literate-haskell-mode-hook
               (lambda()
-                (setq-local mode-line-process nil)))))
+                (setq-local mode-line-process nil)))
+    (spacemacs/set-leader-keys-for-major-mode 'haskell-mode
+      "n" 'flycheck-next-error
+      "p" 'flycheck-previous-error)))
 
 (defun ormolu-unline-fragment ()
   "Replace newlines and indentation with one space to the next indentation level"
