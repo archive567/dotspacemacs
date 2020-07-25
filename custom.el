@@ -310,6 +310,7 @@ This function is called at the very end of Spacemacs initialization."
  '(js2-strict-missing-semi-warning nil)
  '(line-spacing 0.1)
  '(lsp-response-timeout 120)
+ '(lsp-ui-doc-enable nil)
  '(lsp-ui-doc-position (quote bottom))
  '(markdown-command
    "pandoc --from markdown -t html --mathjax --highlight-style pygments --standalone")
@@ -343,9 +344,7 @@ This function is called at the very end of Spacemacs initialization."
      ("x" "sandpit" tags "+SCHEDULED>=\"<2008-10-11>\"" nil))))
  '(org-agenda-diary-file (quote diary-file))
  '(org-agenda-dim-blocked-tasks nil)
- '(org-agenda-files
-   (quote
-    ("~/org/box-socket.org" "/Users/tonyday/org/algebra.org" "/Users/tonyday/org/bugz.org" "/Users/tonyday/org/case.org" "/Users/tonyday/org/chart-svg.org" "/Users/tonyday/org/ephemeral.org" "/Users/tonyday/org/ib.org" "/Users/tonyday/org/interactive-print.org" "/Users/tonyday/org/iqfeed.org" "/Users/tonyday/org/library-checklist.org" "/Users/tonyday/org/life.org" "/Users/tonyday/org/lifta2state.org" "/Users/tonyday/org/numhask-prelude.org" "/Users/tonyday/org/online-market.org" "/Users/tonyday/org/refile.org" "/Users/tonyday/org/revolution.org" "/Users/tonyday/org/sys.org" "/Users/tonyday/org/web-rep.org")))
+ '(org-agenda-files (quote ("~/org")))
  '(org-agenda-include-diary nil)
  '(org-agenda-ndays 1)
  '(org-agenda-persistent-filter t)
@@ -459,7 +458,7 @@ This function is called at the very end of Spacemacs initialization."
  '(org-refile-use-outline-path (quote file))
  '(org-remove-highlights-with-change nil)
  '(org-return-follows-link t)
- '(org-roam-directory "~/org/" nil nil "Customized with use-package org-roam")
+ '(org-roam-directory "~/org/" t nil "Customized with use-package org-roam")
  '(org-show-notification-handler (quote alert))
  '(org-src-fontify-natively t)
  '(org-src-lang-modes

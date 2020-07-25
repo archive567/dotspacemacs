@@ -72,7 +72,6 @@ This function should only modify configuration layer settings."
      org-roam
      osx
      polymode
-     python
      r-ext
      (spell-checking :variables spell-checking-enable-by-default nil)
      style-ext

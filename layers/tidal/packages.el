@@ -6,7 +6,7 @@
     :init
     (progn
       (setq tidal-interpreter "stack")
-      (setq tidal-interpreter-arguments (list "ghci" "--ghci-options" "-XOverloadedStrings" "--package" "tidal-1.4.7" "--resolver" "lts-14.13"))
+      (setq tidal-interpreter-arguments (list "ghci" "--ghci-options" "-XOverloadedStrings" "--package" "tidal-1.6.0" "--resolver" "nightly-2020-06-25"))
       (setq tidal-boot-script-path "~/.spacemacs.d/layers/tidal/BootTidal.hs"))))
 
 
