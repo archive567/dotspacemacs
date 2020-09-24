@@ -261,6 +261,7 @@ This function is called at the very end of Spacemacs initialization."
  '(custom-safe-themes
    (quote
     ("e8825f26af32403c5ad8bc983f8610a4a4786eb55e3a363fa9acb48e0677fe7e" default)))
+ '(deft-auto-save-interval 10.0)
  '(deft-file-naming-rules
     (quote
      ((noslash . "-")
@@ -310,7 +311,7 @@ This function is called at the very end of Spacemacs initialization."
  '(js2-strict-missing-semi-warning nil)
  '(line-spacing 0.1)
  '(lsp-response-timeout 120)
- '(lsp-ui-doc-enable nil)
+ '(lsp-ui-doc-enable nil t)
  '(lsp-ui-doc-position (quote bottom))
  '(markdown-command
    "pandoc --from markdown -t html --mathjax --highlight-style pygments --standalone")
@@ -344,7 +345,7 @@ This function is called at the very end of Spacemacs initialization."
      ("x" "sandpit" tags "+SCHEDULED>=\"<2008-10-11>\"" nil))))
  '(org-agenda-diary-file (quote diary-file))
  '(org-agenda-dim-blocked-tasks nil)
- '(org-agenda-files (quote ("~/org")))
+ '(org-agenda-files (quote ("~/org" "~/org/notes")))
  '(org-agenda-include-diary nil)
  '(org-agenda-ndays 1)
  '(org-agenda-persistent-filter t)
@@ -458,7 +459,7 @@ This function is called at the very end of Spacemacs initialization."
  '(org-refile-use-outline-path (quote file))
  '(org-remove-highlights-with-change nil)
  '(org-return-follows-link t)
- '(org-roam-directory "~/org/" t nil "Customized with use-package org-roam")
+ '(org-roam-directory "~/org/" nil nil "Customized with use-package org-roam")
  '(org-show-notification-handler (quote alert))
  '(org-src-fontify-natively t)
  '(org-src-lang-modes

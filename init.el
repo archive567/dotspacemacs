@@ -42,9 +42,9 @@ This function should only modify configuration layer settings."
      better-defaults
      (bibtex
       :variables
-      org-ref-default-bibliography '("~/org/Papers/references.bib")
-      org-ref-pdf-directory "~/org/Papers/"
-      org-ref-bibliography-notes "~/org/Papers/notes.org")
+      org-ref-default-bibliography '("~/org/notes/Papers/references.bib")
+      org-ref-pdf-directory "~/org/notes/Papers/"
+      org-ref-bibliography-notes "~/org/notes/Papers/notes.org")
      csv
      emacs-lisp
      erc
@@ -60,7 +60,6 @@ This function should only modify configuration layer settings."
      html
      lsp
      (markdown :variables markdown-live-preview-engine 'vmd)
-     multiple-cursors
      (javascript :variables javascript-backend 'lsp)
      (org
       :variables
@@ -71,8 +70,6 @@ This function should only modify configuration layer settings."
       )
      org-roam
      osx
-     polymode
-     r-ext
      (spell-checking :variables spell-checking-enable-by-default nil)
      style-ext
      syntax-checking
@@ -82,7 +79,7 @@ This function should only modify configuration layer settings."
      yaml
      (deft
        :variables
-       deft-directory "~/org"
+       deft-directory "~/org/notes"
        deft-extensions '("org" "txt" "md")
        deft-recursive t
        )

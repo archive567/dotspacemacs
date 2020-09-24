@@ -6,3 +6,4 @@ elpa/*
 data/*
 snippets/*.yas*
 snippets/*/.yas*
+/.spacemacs.env
