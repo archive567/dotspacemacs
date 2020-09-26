@@ -70,9 +70,6 @@ This function is called at the very end of Spacemacs initialization."
      ("x" "sandpit" tags "+SCHEDULED>=\"<2008-10-11>\"" nil))))
  '(org-agenda-diary-file (quote diary-file))
  '(org-agenda-dim-blocked-tasks nil)
- '(org-agenda-files
-   (quote
-    ("~/org")))
  '(org-agenda-include-diary nil)
  '(org-agenda-ndays 1)
  '(org-agenda-persistent-filter t)
