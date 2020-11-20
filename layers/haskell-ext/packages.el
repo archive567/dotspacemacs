@@ -1,15 +1,5 @@
 (defconst haskell-ext-packages
-  '(ormolu))
-
-(defun haskell-ext/init-ormolu ()
-  (use-package ormolu
-    :defer t
-    :init
-    (progn
-      (spacemacs/set-leader-keys-for-major-mode 'haskell-mode
-        "ro" 'ormolu-format-buffer
-        "rO" 'ormolu-format-region
-        "ru" 'ormolu-unline-fragment))))
+  '( ))
 
 (spacemacs|use-package-add-hook haskell-mode
   :pre-init
@@ -40,9 +30,10 @@
                 (setq-local mode-line-process nil)))
     (spacemacs/set-leader-keys-for-major-mode 'haskell-mode
       "n" 'flycheck-next-error
-      "p" 'flycheck-previous-error)))
+      "p" 'flycheck-previous-error
+      "ru" 'unline-fragment)))
 
-(defun ormolu-unline-fragment ()
+(defun unline-fragment ()
   "Replace newlines and indentation with one space to the next indentation level"
   (interactive)
   (save-excursion
@@ -59,6 +50,3 @@
       )
     )
   )
-
-
-

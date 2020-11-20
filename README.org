@@ -2,7 +2,7 @@
 
 - minor tweaks to org and haskell
 - windows and osx
-- some workarounds for external packages
+- tidal
 
 * setup from scratch
 
