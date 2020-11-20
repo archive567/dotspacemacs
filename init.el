@@ -46,6 +46,12 @@ This function should only modify configuration layer settings."
       org-ref-pdf-directory "~/org/notes/Papers/"
       org-ref-bibliography-notes "~/org/notes/Papers/notes.org")
      csv
+     (deft
+       :variables
+       deft-directory "~/org/notes"
+       deft-extensions '("org" "txt" "md")
+       deft-recursive t
+       )
      emacs-lisp
      erc
      git
@@ -76,14 +82,7 @@ This function should only modify configuration layer settings."
      themes-megapack
      tidal
      version-control
-     yaml
-     (deft
-       :variables
-       deft-directory "~/org/notes"
-       deft-extensions '("org" "txt" "md")
-       deft-recursive t
-       )
-     )
+     yaml)
 
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -92,7 +91,11 @@ This function should only modify configuration layer settings."
    ;; To use a local version of a package, use the `:location' property:
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages
+   '(
+     darkroom
+     sqlite3
+     )
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -552,8 +555,7 @@ before packages are loaded."
   (spacemacs/toggle-spelling-checking-off)
   (setq spaceline-version-control-p nil)
   (setq spaceline-buffer-encoding-abbrev-p nil)
-  (setq spaceline-buffer-purpose-p nil)
-  (setq lsp-haskell-process-path-hie "haskell-language-server-wrapper"))
+  (setq spaceline-buffer-purpose-p nil))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
