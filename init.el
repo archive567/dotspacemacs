@@ -32,19 +32,13 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(
-     ;; ----------------------------------------------------------------
+   '(;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      auto-completion
      better-defaults
-     (bibtex
-      :variables
-      org-ref-default-bibliography '("~/org/notes/Papers/references.bib")
-      org-ref-pdf-directory "~/org/notes/Papers/"
-      org-ref-bibliography-notes "~/org/notes/Papers/notes.org")
      csv
      (deft
        :variables
@@ -67,14 +61,7 @@ This function should only modify configuration layer settings."
      lsp
      (markdown :variables markdown-live-preview-engine 'vmd)
      (javascript :variables javascript-backend 'lsp)
-     (org
-      :variables
-      org-enable-hugo-support t)
-     (org-ext
-      :variables
-      org-ext-hugo-export-on-save t
-      )
-     org-roam
+     org
      osx
      (spell-checking :variables spell-checking-enable-by-default nil)
      style-ext
