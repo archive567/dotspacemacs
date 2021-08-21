@@ -47,7 +47,13 @@ This function should only modify configuration layer settings."
        deft-recursive t
        )
      emacs-lisp
-     erc
+     (erc
+      :variables
+      erc-server-list
+      '(("irc.libera.chat"
+         :port "6697"
+         :ssl t
+         :nick "scootah")))
      git
      (haskell
       :variables
@@ -79,10 +85,7 @@ This function should only modify configuration layer settings."
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages
-   '(
-     darkroom
-     sqlite3
-     )
+   '()
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -98,10 +101,7 @@ This function should only modify configuration layer settings."
      helm-flycheck
      flycheck-pos-tip
      evil-unimpaired
-     ;; haskell-cabal
-     ;; yasnippet
      ggtags
-     ;; haskell-snippets
      )
 
    ;; Defines the behaviour of Spacemacs when installing packages.
@@ -533,7 +533,8 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-
+  ;; https://emacs.stackexchange.com/questions/61385/why-unicode-poker-card-cant-be-properly-displayed-in-gui-but-fine-in-tui
+  (set-fontset-font nil 'playing-cards (font-spec :script 'playing-cards))
   ;; default-frame doesn't work here because there is not yet a selected-frame
   (setq initial-frame-alist '((top . 30) (left . 11) (width . 100) (height . 49)))
   (setq header-line-format " ")
