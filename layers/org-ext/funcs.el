@@ -1,26 +1,16 @@
-(setq org-random-packages
-      '(
-        ))
+;;; funcs.el --- Org Extension Layer functions for Spacemacs
+;;
+;; Copyright (c) 2015 Tony Day
+;;
+;; This file is not part of GNU Emacs.
+;;
+;;; License: GPLv3
 
-(defun org/pre-init-org ()
-  (spacemacs|use-package-add-hook org
-    :post-init
-    (progn
-      (add-to-list 'auto-mode-alist '("\\.org_archive\\'" . org-mode))
-      (org-babel-do-load-languages
-       'org-babel-load-languages
-       '((emacs-lisp . t)
-         ))
-      (evil-leader/set-key-for-mode 'org-mode
-        "R" 'org-random)
-      (evil-leader/set-key-for-mode 'org-agenda-mode
-        "R" 'org-random)
-      (setq org-link-types '("http" "https" "ftp" "mailto" "file" "news"
-                             "elisp" "doi" "message")))))
-
-(defun org-random (&optional arg)
+(defun org-ext-random-entry (&optional arg)
   "Select and goto a random todo item from the global agenda"
   (interactive "P")
+  (if org-agenda-overriding-arguments
+      (setq arg org-agenda-overriding-arguments))
   (if (and (stringp arg) (not (string-match "\\S-" arg))) (setq arg nil))
   (let* ((today (org-today))
          (date (calendar-gregorian-from-absolute today))
@@ -70,3 +60,19 @@
           (when (outline-invisible-p)
             (show-entry))               ; display invisible text
           (run-hooks 'org-agenda-after-show-hook))))))
+
+(defun org-cliplink-multi ()
+  (require 'org-cliplink)
+  (interactive)
+  (mapcar (lambda (x)
+            (org-cliplink-insert-transformed-title x 'org-cliplink-org-mode-link-transformer-nl))
+          (org-split-string (org-cliplink-clipboard-content))))
+
+(defun org-cliplink-org-mode-link-transformer-nl (url title)
+  (if title
+      (format "[[%s][%s]]\n" url (org-cliplink-elide-string
+                                (org-cliplink-escape-html4
+                                 (org-cliplink-title-for-url url title))
+                                org-cliplink-max-length))
+    (format "[[%s]]\n" url)))
+

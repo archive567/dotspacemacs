@@ -257,22 +257,28 @@ This function is called at the very end of Spacemacs initialization."
  '(create-lockfiles nil)
  '(css-indent-offset 2)
  '(custom-safe-themes
-   '("e8825f26af32403c5ad8bc983f8610a4a4786eb55e3a363fa9acb48e0677fe7e" default))
+   (quote
+    ("e8825f26af32403c5ad8bc983f8610a4a4786eb55e3a363fa9acb48e0677fe7e" default)))
  '(deft-auto-save-interval 10.0)
- '(deft-file-naming-rules '((noslash . "-") (nospace . "-") (case-fn . downcase)))
+ '(deft-file-naming-rules
+    (quote
+     ((noslash . "-")
+      (nospace . "-")
+      (case-fn . downcase))))
  '(deft-strip-summary-regexp "\\([
 	]\\|^#\\+.+:.*$\\)")
  '(delete-by-moving-to-trash nil)
  '(dired-auto-revert-buffer t)
- '(erc-hide-list '("JOIN" "KICK" "NICK" "PART" "QUIT"))
- '(ess-default-style 'DEFAULT)
- '(ess-style 'DEFAULT)
+ '(erc-hide-list (quote ("JOIN" "KICK" "NICK" "PART" "QUIT")))
+ '(ess-default-style (quote DEFAULT))
+ '(ess-style (quote DEFAULT))
  '(evil-escape-key-sequence "jk")
  '(evil-want-Y-yank-to-eol nil)
- '(flycheck-check-syntax-automatically '(save mode-enabled))
+ '(flycheck-check-syntax-automatically (quote (save mode-enabled)))
  '(flycheck-checkers
-   '(ada-gnat asciidoctor asciidoc c/c++-clang c/c++-gcc c/c++-cppcheck cfengine chef-foodcritic coffee coffee-coffeelint coq css-csslint css-stylelint cuda-nvcc cwl d-dmd dockerfile-hadolint emacs-lisp emacs-lisp-checkdoc erlang-rebar3 erlang eruby-erubis fortran-gfortran go-gofmt go-golint go-vet go-build go-test go-errcheck go-unconvert go-megacheck go-staticcheck groovy haml handlebars haskell-dante haskell-stack-ghc haskell-ghc haskell-hlint html-tidy javascript-eslint javascript-jshint javascript-standard json-jsonlint json-python-json jsonnet less less-stylelint llvm-llc lua-luacheck lua markdown-markdownlint-cli markdown-mdl nix nix-linter opam perl perl-perlcritic php php-phpmd php-phpcs processing proselint protobuf-protoc pug puppet-parser puppet-lint python-flake8 python-pylint python-pycompile python-mypy r-lintr racket rpm-rpmlint rst-sphinx rst ruby-rubocop ruby-reek ruby-rubylint ruby ruby-jruby rust-cargo rust rust-clippy scala scala-scalastyle scheme-chicken scss-lint scss-stylelint sass/scss-sass-lint sass scss sh-bash sh-posix-dash sh-posix-bash sh-zsh sh-shellcheck slim slim-lint sql-sqlint systemd-analyze tcl-nagelfar tex-chktex tex-lacheck texinfo textlint typescript-tslint verilog-verilator vhdl-ghdl xml-xmlstarlet xml-xmllint yaml-jsyaml yaml-ruby))
- '(flycheck-display-errors-function 'flycheck-display-error-messages)
+   (quote
+    (ada-gnat asciidoctor asciidoc c/c++-clang c/c++-gcc c/c++-cppcheck cfengine chef-foodcritic coffee coffee-coffeelint coq css-csslint css-stylelint cuda-nvcc cwl d-dmd dockerfile-hadolint emacs-lisp emacs-lisp-checkdoc erlang-rebar3 erlang eruby-erubis fortran-gfortran go-gofmt go-golint go-vet go-build go-test go-errcheck go-unconvert go-megacheck go-staticcheck groovy haml handlebars haskell-dante haskell-stack-ghc haskell-ghc haskell-hlint html-tidy javascript-eslint javascript-jshint javascript-standard json-jsonlint json-python-json jsonnet less less-stylelint llvm-llc lua-luacheck lua markdown-markdownlint-cli markdown-mdl nix nix-linter opam perl perl-perlcritic php php-phpmd php-phpcs processing proselint protobuf-protoc pug puppet-parser puppet-lint python-flake8 python-pylint python-pycompile python-mypy r-lintr racket rpm-rpmlint rst-sphinx rst ruby-rubocop ruby-reek ruby-rubylint ruby ruby-jruby rust-cargo rust rust-clippy scala scala-scalastyle scheme-chicken scss-lint scss-stylelint sass/scss-sass-lint sass scss sh-bash sh-posix-dash sh-posix-bash sh-zsh sh-shellcheck slim slim-lint sql-sqlint systemd-analyze tcl-nagelfar tex-chktex tex-lacheck texinfo textlint typescript-tslint verilog-verilator vhdl-ghdl xml-xmlstarlet xml-xmllint yaml-jsyaml yaml-ruby)))
+ '(flycheck-display-errors-function (quote flycheck-display-error-messages))
  '(flycheck-haskell-stack-ghc-executable "/Users/tonyday/.local/bin/stack")
  '(flycheck-hlintrc nil)
  '(flycheck-lintr-linters
@@ -290,7 +296,7 @@ This function is called at the very end of Spacemacs initialization."
  '(haskell-indentation-starter-offset 2)
  '(haskell-indentation-where-post-offset 2)
  '(haskell-indentation-where-pre-offset 2)
- '(haskell-interactive-mode-eval-mode 'ignore)
+ '(haskell-interactive-mode-eval-mode (quote ignore))
  '(haskell-process-show-debug-tips nil)
  '(haskell-process-show-overlays nil)
  '(haskell-process-suggest-add-package nil)
@@ -298,10 +304,10 @@ This function is called at the very end of Spacemacs initialization."
  '(haskell-process-suggest-hoogle-imports t)
  '(haskell-process-suggest-restart nil)
  '(haskell-svg-render-images t)
- '(highlight-parentheses-background-colors '("#2492db" "#95a5a6" nil))
- '(highlight-parentheses-colors '("#ecf0f1" "#ecf0f1" "#c0392b"))
- '(hl-paren-background-colors '("#2492db" "#95a5a6" nil))
- '(hl-paren-colors '("#ecf0f1" "#ecf0f1" "#c0392b"))
+ '(highlight-parentheses-background-colors (quote ("#2492db" "#95a5a6" nil)))
+ '(highlight-parentheses-colors (quote ("#ecf0f1" "#ecf0f1" "#c0392b")))
+ '(hl-paren-background-colors (quote ("#2492db" "#95a5a6" nil)))
+ '(hl-paren-colors (quote ("#ecf0f1" "#ecf0f1" "#c0392b")) t)
  '(ido-auto-merge-delay-time 4)
  '(js2-strict-missing-semi-warning nil)
  '(line-spacing 0.1)
@@ -312,15 +318,16 @@ This function is called at the very end of Spacemacs initialization."
  '(lsp-response-timeout 120)
  '(lsp-ui-doc-delay 2)
  '(lsp-ui-doc-enable nil t)
- '(lsp-ui-doc-position 'bottom)
+ '(lsp-ui-doc-position (quote bottom))
  '(markdown-command
    "pandoc --from markdown -t html --mathjax --highlight-style pygments --standalone")
- '(org-M-RET-may-split-line '((headline . t)))
+ '(org-M-RET-may-split-line (quote ((headline . t))))
  '(org-adapt-indentation nil)
  '(org-agenda-block-separator "")
  '(org-agenda-compact-blocks t)
  '(org-agenda-custom-commands
-   '(("n" "Agenda and all TODO's"
+   (quote
+    (("n" "Agenda and all TODO's"
       ((agenda ""
                ((org-agenda-overriding-header "today")))
        (tags "REFILE"
@@ -341,15 +348,16 @@ This function is called at the very end of Spacemacs initialization."
        (tags "TODO=\"DONE\""
              ((org-agenda-overriding-header "done and dusted"))))
       nil nil)
-     ("x" "sandpit" tags "+SCHEDULED>=\"<2008-10-11>\"" nil)))
- '(org-agenda-diary-file 'diary-file)
+     ("x" "sandpit" tags "+SCHEDULED>=\"<2008-10-11>\"" nil))))
+ '(org-agenda-diary-file (quote diary-file))
  '(org-agenda-dim-blocked-tasks nil)
  '(org-agenda-files
-   '("~/org/act.org" "/Users/tonyday/org/emacs.org" "/Users/tonyday/org/ib.org" "/Users/tonyday/org/iqfeed-api.org" "/Users/tonyday/org/iqfeed.org" "/Users/tonyday/org/life.org" "/Users/tonyday/org/mmtmodel.org" "/Users/tonyday/org/refile.org" "/Users/tonyday/org/repos.org" "/Users/tonyday/org/sys.org"))
+   (quote
+    ("~/org/act.org" "/Users/tonyday/org/emacs.org" "/Users/tonyday/org/ib.org" "/Users/tonyday/org/iqfeed-api.org" "/Users/tonyday/org/iqfeed.org" "/Users/tonyday/org/life.org" "/Users/tonyday/org/mmtmodel.org" "/Users/tonyday/org/refile.org" "/Users/tonyday/org/repos.org" "/Users/tonyday/org/sys.org")))
  '(org-agenda-include-diary nil)
  '(org-agenda-ndays 1)
  '(org-agenda-persistent-filter t)
- '(org-agenda-scheduled-leaders '("" "S%d: "))
+ '(org-agenda-scheduled-leaders (quote ("" "S%d: ")))
  '(org-agenda-skip-additional-timestamps-same-entry t)
  '(org-agenda-skip-deadline-if-done t)
  '(org-agenda-skip-scheduled-if-deadline-is-shown t)
@@ -357,37 +365,40 @@ This function is called at the very end of Spacemacs initialization."
  '(org-agenda-skip-timestamp-if-done t)
  '(org-agenda-skip-unavailable-files t)
  '(org-agenda-sorting-strategy
-   '((agenda habit-down time-up todo-state-up user-defined-up priority-down effort-up category-keep)
+   (quote
+    ((agenda habit-down time-up todo-state-up user-defined-up priority-down effort-up category-keep)
      (todo category-up priority-down effort-up)
      (tags category-up priority-down effort-up)
-     (search category-keep)))
- '(org-agenda-span 'day)
+     (search category-keep))))
+ '(org-agenda-span (quote day))
  '(org-agenda-start-on-weekday nil)
  '(org-agenda-tags-column -102)
  '(org-agenda-tags-todo-honor-ignore-options t)
  '(org-agenda-text-search-extra-files nil)
  '(org-agenda-use-time-grid nil)
- '(org-agenda-window-setup 'current-window)
+ '(org-agenda-window-setup (quote current-window))
  '(org-babel-load-languages
-   '((emacs-lisp . t)
+   (quote
+    ((emacs-lisp . t)
      (shell . t)
      (dot . t)
      (org . t)
      (js . t)
-     (haskell \.t)))
+     (haskell \.t))))
  '(org-babel-results-keyword "results")
- '(org-bullets-bullet-list '(" "))
+ '(org-bullets-bullet-list (quote (" ")))
  '(org-capture-bookmark nil)
  '(org-capture-templates
-   '(("r" "refile" entry
+   (quote
+    (("r" "refile" entry
       (file "~/org/refile.org")
       "* TODO %?
 ")
      ("z" "bugz" entry
       (file+headline "~/org/bugz.org" "bugz!")
       "* TODO %?
-%a")))
- '(org-clock-clocked-in-display 'mode-line)
+%a"))))
+ '(org-clock-clocked-in-display (quote mode-line))
  '(org-clock-idle-time 10)
  '(org-completion-use-ido t)
  '(org-confirm-babel-evaluate nil)
@@ -402,9 +413,10 @@ This function is called at the very end of Spacemacs initialization."
  '(org-enable-priority-commands nil)
  '(org-enforce-todo-dependencies t)
  '(org-entities-user
-   '(("hardbreak" "\\\\" nil "" "" "" "")
-     ("greytext" "\\\\color{greytext}" nil "" "" "" "")))
- '(org-export-backends '(ascii html latex md))
+   (quote
+    (("hardbreak" "\\\\" nil "" "" "" "")
+     ("greytext" "\\\\color{greytext}" nil "" "" "" ""))))
+ '(org-export-backends (quote (ascii html latex md)))
  '(org-export-copy-to-kill-ring t)
  '(org-export-date-timestamp-format "%Y-%m-%d")
  '(org-export-html-inline-images t)
@@ -414,14 +426,15 @@ This function is called at the very end of Spacemacs initialization."
  '(org-export-html-style-extra "")
  '(org-export-html-style-include-default nil)
  '(org-export-html-xml-declaration
-   '(("html" . "")
+   (quote
+    (("html" . "")
      ("was-html" . "<?xml version=\"1.0\" encoding=\"%s\"?>")
-     ("php" . "<?php echo \"<?xml version=\\\"1.0\\\" encoding=\\\"%s\\\" ?>\"; ?>")))
+     ("php" . "<?php echo \"<?xml version=\\\"1.0\\\" encoding=\\\"%s\\\" ?>\"; ?>"))))
  '(org-export-use-babel nil)
  '(org-export-with-drawers nil)
  '(org-export-with-tags nil)
  '(org-export-with-timestamps nil)
- '(org-fast-tag-selection-single-key 'expert)
+ '(org-fast-tag-selection-single-key (quote expert))
  '(org-fontify-done-headline t)
  '(org-fontify-quote-and-verse-blocks t)
  '(org-fontify-whole-heading-line t)
@@ -431,34 +444,36 @@ This function is called at the very end of Spacemacs initialization."
  '(org-hide-leading-stars nil)
  '(org-html-head-include-default-style nil)
  '(org-html-head-include-scripts nil)
- '(org-html-htmlize-output-type 'css)
+ '(org-html-htmlize-output-type (quote css))
  '(org-html-postamble nil)
  '(org-image-actual-width nil)
  '(org-insert-heading-respect-content nil)
  '(org-latex-to-pdf-process
-   '("xelatex -interaction nonstopmode -output-directory %o %f" "xetex %f"))
- '(org-link-abbrev-alist '(("google" . "http://www.google.com/search?q=")))
+   (quote
+    ("xelatex -interaction nonstopmode -output-directory %o %f" "xetex %f")))
+ '(org-link-abbrev-alist (quote (("google" . "http://www.google.com/search?q="))))
  '(org-link-elisp-confirm-function nil)
  '(org-link-from-user-regexp "\\<tony day\\>")
  '(org-log-done nil)
  '(org-log-into-drawer "LOGBOOK")
- '(org-modules '(org-id org-info))
+ '(org-modules (quote (org-id org-info)))
  '(org-outline-path-complete-in-steps nil)
  '(org-pomodoro-format "%s")
  '(org-pretty-entities t)
  '(org-priority-enable-commands nil)
  '(org-provide-todo-statistics nil)
- '(org-refile-allow-creating-parent-nodes 'confirm)
+ '(org-refile-allow-creating-parent-nodes (quote confirm))
  '(org-refile-target-verify-function nil)
- '(org-refile-targets '((org-agenda-files :maxlevel . 2)))
- '(org-refile-use-outline-path 'file)
+ '(org-refile-targets (quote ((org-agenda-files :maxlevel . 2))))
+ '(org-refile-use-outline-path (quote file))
  '(org-remove-highlights-with-change nil)
  '(org-return-follows-link t)
  '(org-roam-directory "~/org/notes" nil nil "Customized with use-package org-roam")
- '(org-show-notification-handler 'alert)
+ '(org-show-notification-handler (quote alert))
  '(org-src-fontify-natively t)
  '(org-src-lang-modes
-   '(("plantuml" . fundamental)
+   (quote
+    (("plantuml" . fundamental)
      ("ocaml" . tuareg)
      ("elisp" . emacs-lisp)
      ("ditaa" . artist)
@@ -470,30 +485,33 @@ This function is called at the very end of Spacemacs initialization."
      ("cpp" . c++)
      ("screen" . shell-script)
      ("R" . R)
-     ("haskell" . haskell)))
+     ("haskell" . haskell))))
  '(org-src-preserve-indentation t)
  '(org-startup-folded t)
  '(org-startup-indented t)
  '(org-support-shift-select t)
- '(org-todo-keywords '((sequence "TODO" "DONE" "BLOCKED")))
+ '(org-todo-keywords (quote ((sequence "TODO" "DONE" "BLOCKED"))))
  '(package-archives
-   '(("melpa" . "http://melpa.org/packages/")
+   (quote
+    (("melpa" . "http://melpa.org/packages/")
      ("org" . "http://orgmode.org/elpa/")
-     ("gnu" . "http://elpa.gnu.org/packages/")))
+     ("gnu" . "http://elpa.gnu.org/packages/"))))
  '(package-selected-packages
-   '(lsp-ui lsp-haskell tidal multiple-cursors hasky-extensions idris-mode prop-menu zonokai-theme zenburn-theme zen-and-art-theme yaml-mode xterm-color ws-butler winum which-key web-mode volatile-highlights vi-tilde-fringe uuidgen use-package underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme tronesque-theme toxi-theme toc-org tao-theme tangotango-theme tango-plus-theme tango-2-theme tagedit sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spaceline powerline spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme smeargle slim-mode shell-pop seti-theme scss-mode sass-mode reverse-theme reveal-in-osx-finder restart-emacs rainbow-delimiters railscasts-theme purple-haze-theme pug-mode professional-theme popwin planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme persp-mode pcre2el pbcopy pastels-on-dark-theme paradox spinner osx-trash osx-dictionary orgit organic-green-theme org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-plus-contrib org-download org-bullets open-junk-file omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme niflheim-theme neotree naquadah-theme mustang-theme multi-term move-text monokai-theme monochrome-theme molokai-theme moe-theme mmm-mode minimal-theme material-theme markdown-toc markdown-mode majapahit-theme magit-gitflow madhat2r-theme macrostep lush-theme lorem-ipsum linum-relative link-hint light-soap-theme less-css-mode launchctl jbeans-theme jazz-theme ir-black-theme intero inkpot-theme info+ indent-guide hydra hungry-delete htmlize hlint-refactor hl-todo hindent highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt heroku-theme hemisu-theme help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile helm-hoogle helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag hc-zenburn-theme haskell-snippets haml-mode gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme google-translate golden-ratio gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gh-md gandalf-theme fuzzy flycheck-pos-tip pos-tip flycheck-haskell flycheck pkg-info epl flx-ido flx flatui-theme flatland-theme firebelly-theme fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit magit magit-popup git-commit with-editor evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight espresso-theme eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav ein skewer-mode request-deferred websocket request deferred js2-mode simple-httpd dumb-jump f s dracula-theme django-theme diminish diff-hl darktooth-theme autothemer darkokai-theme darkmine-theme darkburn-theme dakrone-theme cyberpunk-theme company-web web-completion-data company-statistics company-ghci company-ghc ghc haskell-mode company-cabal company column-enforce-mode color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized cmm-mode clues-theme clean-aindent-mode cherry-blossom-theme busybee-theme bubbleberry-theme birds-of-paradise-plus-theme bind-map bind-key badwolf-theme auto-yasnippet yasnippet auto-highlight-symbol auto-compile packed dash apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes aggressive-indent afternoon-theme adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core async ac-ispell auto-complete popup farmhouse-theme))
+   (quote
+    (yasnippet-snippets writeroom-mode visual-fill-column white-sand-theme vmd-mode unfill treemacs-projectile treemacs-persp treemacs-magit treemacs-icons-dired treemacs-evil symbol-overlay string-inflection password-generator org-superstar org-rich-yank org-mime org-cliplink lsp-treemacs treemacs cfrs posframe lsp-origami kaolin-themes js2-refactor helm-xref helm-org helm-lsp lsp-mode helm-ls-git gitignore-templates flyspell-correct-helm flyspell-correct flycheck-package package-lint evil-org erc-image emr list-utils editorconfig nadvice doom-themes deft dante lcr csv-mode chocolate-theme browse-at-remote ht attrap emacsql window-purpose imenu-list all-the-icons string-edit quickrun orgit-forge org npm-mode multi-line shut-up forge yaml ghub closql treepy transient magit-section evil-easymotion evil-collection annalist drag-stuff dired-quick-sort lsp-ui lsp-haskell tidal multiple-cursors hasky-extensions idris-mode prop-menu zonokai-theme zenburn-theme zen-and-art-theme yaml-mode xterm-color ws-butler winum which-key web-mode volatile-highlights vi-tilde-fringe uuidgen use-package underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme tronesque-theme toxi-theme toc-org tao-theme tangotango-theme tango-plus-theme tango-2-theme tagedit sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spaceline powerline spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme smeargle slim-mode shell-pop seti-theme scss-mode sass-mode reverse-theme reveal-in-osx-finder restart-emacs rainbow-delimiters railscasts-theme purple-haze-theme pug-mode professional-theme popwin planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme persp-mode pcre2el pbcopy pastels-on-dark-theme paradox spinner osx-trash osx-dictionary orgit organic-green-theme org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-plus-contrib org-download org-bullets open-junk-file omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme niflheim-theme neotree naquadah-theme mustang-theme multi-term move-text monokai-theme monochrome-theme molokai-theme moe-theme mmm-mode minimal-theme material-theme markdown-toc markdown-mode majapahit-theme magit-gitflow madhat2r-theme macrostep lush-theme lorem-ipsum linum-relative link-hint light-soap-theme less-css-mode launchctl jbeans-theme jazz-theme ir-black-theme intero inkpot-theme info+ indent-guide hydra hungry-delete htmlize hlint-refactor hl-todo hindent highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt heroku-theme hemisu-theme help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile helm-hoogle helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag hc-zenburn-theme haskell-snippets haml-mode gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme google-translate golden-ratio gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gh-md gandalf-theme fuzzy flycheck-pos-tip pos-tip flycheck-haskell flycheck pkg-info epl flx-ido flx flatui-theme flatland-theme firebelly-theme fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit magit magit-popup git-commit with-editor evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight espresso-theme eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav ein skewer-mode request-deferred websocket request deferred js2-mode simple-httpd dumb-jump f s dracula-theme django-theme diminish diff-hl darktooth-theme autothemer darkokai-theme darkmine-theme darkburn-theme dakrone-theme cyberpunk-theme company-web web-completion-data company-statistics company-ghci company-ghc ghc haskell-mode company-cabal company column-enforce-mode color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized cmm-mode clues-theme clean-aindent-mode cherry-blossom-theme busybee-theme bubbleberry-theme birds-of-paradise-plus-theme bind-map bind-key badwolf-theme auto-yasnippet yasnippet auto-highlight-symbol auto-compile packed dash apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes aggressive-indent afternoon-theme adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core async ac-ispell auto-complete popup farmhouse-theme)))
  '(paradox-automatically-star t)
  '(paradox-execute-asynchronously t t)
  '(paradox-github-token "9c0337a9d7ffbfa53d06bf294278dc777a2b77c9")
- '(powerline-default-separator 'arrow)
+ '(powerline-default-separator (quote arrow))
  '(projectile-known-projects-file "~/.emacs.d/.cache/projectile-bookmarks.eld")
- '(reb-re-syntax 'read)
+ '(reb-re-syntax (quote read))
  '(recentf-save-file "~/.emacs.d/.cache/recentf")
  '(tags-add-tables nil)
  '(tramp-persistency-file-name "~/.emacs.d/.cache/tramp")
  '(vc-annotate-background "#ecf0f1")
  '(vc-annotate-color-map
-   '((30 . "#e74c3c")
+   (quote
+    ((30 . "#e74c3c")
      (60 . "#c0392b")
      (90 . "#e67e22")
      (120 . "#d35400")
@@ -504,21 +522,22 @@ This function is called at the very end of Spacemacs initialization."
      (270 . "#1abc9c")
      (300 . "#16a085")
      (330 . "#2492db")
-     (360 . "#0a74b9")))
+     (360 . "#0a74b9"))))
  '(vc-annotate-very-old-color "#0a74b9")
- '(warning-suppress-types '((use-package)))
+ '(warning-suppress-types (quote ((use-package))))
  '(when
       (or
        (not
-        (boundp 'ansi-term-color-vector))
+        (boundp
+         (quote ansi-term-color-vector)))
        (not
         (facep
          (aref ansi-term-color-vector 0)))))
- '(yas-fallback-behavior 'call-other-command)
- '(yas-indent-line 'nothing)
- '(yas-prompt-functions '(yas-ido-prompt yas-dropdown-prompt))
- '(yas-triggers-in-field t)
- '(yas-wrap-around-region t))
+ '(yas-fallback-behavior (quote call-other-command))
+ '(yas-indent-line (quote nothing))
+ '(yas-prompt-functions (quote (yas-ido-prompt yas-dropdown-prompt)) t)
+ '(yas-triggers-in-field t t)
+ '(yas-wrap-around-region t t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

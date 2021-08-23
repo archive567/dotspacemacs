@@ -68,7 +68,7 @@ This function should only modify configuration layer settings."
      (markdown :variables markdown-live-preview-engine 'vmd)
      (javascript :variables javascript-backend 'lsp)
      org
-     org-random
+     org-ext
      osx
      (spell-checking :variables spell-checking-enable-by-default nil)
      style-ext
@@ -103,6 +103,7 @@ This function should only modify configuration layer settings."
      flycheck-pos-tip
      evil-unimpaired
      ggtags
+     org-contrib
      )
 
    ;; Defines the behaviour of Spacemacs when installing packages.
